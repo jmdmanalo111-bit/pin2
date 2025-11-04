@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intangible Asset Specialist — PIN Valuations</title>
+  <link rel="canonical" href="https://pin.ca/pages/intangible.html">
+  <link rel="alternate" hreflang="x-default" href="https://pin.ca/pages/intangible.html">
+  <link rel="alternate" hreflang="en-CA" href="https://pin.ca/pages/intangible.html">
+  <meta name="description" content="Why 90% of company value is intangible — and how PIN Valuations measures it using the 25 Factors framework aligned to Fair Market Value.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+  <style>
+    :root{
+      --bg:#0b1020;--ink:#0f172a;--muted:#475569;--brand:#2447f9;
+      --paper:#ffffff;--edge:#e2e8f0;--chip:#f1f5f9;--success:#16a34a;
+      --shell:#0f172a;--shell-edge:#1f2937;
+      --sidebar-w:260px;
+      --transition:240ms ease;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);color:var(--ink);line-height:1.6
+    }
+    a{color:var(--brand)} a:hover{text-decoration:underline}
+    [id]{scroll-margin-top:72px}
+
+    /* Topbar */
+    .topbar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 12px;
+  background: linear-gradient(180deg,#0b1020 0%,#11183a 100%);
+  color: #e5e7eb;
+  border-bottom: 1px solid rgba(148,163,184,.25);
+  box-shadow: 0 6px 18px rgba(2,6,23,.35);
+}
+.topbar-title{font-weight:800;letter-spacing:.2px}
+
+    /* Burger */
+    .burger{
+      width:44px;height:36px;display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+      border:1px solid var(--shell-edge);border-radius:8px;background:transparent;color:#e5e7eb;cursor:pointer;padding:0 8px;
+    }
+    .burger:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
+    .burger-bar{height:2px;width:22px;margin:0 auto;background:currentColor;transition:transform var(--transition),opacity var(--transition)}
+    body.menu-open .burger-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    body.menu-open .burger-bar:nth-child(2){opacity:0}
+    body.menu-open .burger-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* Layout */
+    .app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;margin-top:56px}
+    .content{overflow:hidden}
+
+    /* Sidebar */
+    .sidebar{
+      background:var(--paper);color:#0f172a;border-right:1px solid var(--edge);padding:16px;
+      position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;box-shadow:4px 0 24px rgba(2,6,23,.08);z-index:1002
+    }
+    .menu-heading{margin:16px 0 8px;font-size:14px;color:#64748b;text-transform:uppercase;letter-spacing:.08em}
+    .menu-label{margin-top:16px;color:#9aa4b2;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .navlinks{list-style:none;padding:0;margin:0}
+    .navlinks li+li{margin-top:8px}
+    .navlinks a{
+      display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:10px;color:#0f172a;text-decoration:none;border:1px solid transparent;
+      transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease
+    }
+    .navlinks a:hover{background:var(--chip);border-color:var(--edge)}
+    .navlinks a.active{background:linear-gradient(90deg,#eef2ff 0%,#ffffff 60%);color:#1d4ed8;border-color:#c7d2fe;box-shadow:0 4px 12px rgba(37,99,235,.12) inset}
+
+    /* Collapse on desktop when closed */
+    body:not(.menu-open) .sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
+    body:not(.menu-open) .app{grid-template-columns:0 1fr}
+
+    /* Mobile drawer */
+    @media (max-width:960px){
+      .app{grid-template-columns:1fr}
+      .sidebar{position:fixed;top:56px;left:0;bottom:0;width:min(86vw,320px);height:auto;max-height:none;transform:translateX(-100%);transition:transform .25s ease;box-shadow:0 12px 30px rgba(2,6,23,.30)}
+      body.menu-open .sidebar{transform:translateX(0)}
+    }
+    .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;transition:opacity .2s ease;z-index:1001;pointer-events:none}
+    .backdrop.show{opacity:1;pointer-events:auto}
+
+    /* Hero */
+    header.hero{background:linear-gradient(180deg,#0b1020 0%,#11183a 100%);color:#eef2ff;padding:56px 0 28px;position:relative;overflow:hidden}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    h1.title{margin:0 0 8px;font-weight:800;font-size:clamp(28px,3.4vw,42px);letter-spacing:.2px}
+    p.subtitle{margin:0;color:#c7d2fe;max-width:62ch}
+    .chiprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .chip{background:rgba(255,255,255,.08);color:#e0e7ff;border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:999px;font-size:14px;text-decoration:none}
+    .chip:hover{background:rgba(255,255,255,.14)}
+
+    /* Cards & sections */
+    section{padding:38px 24px}
+    .card{background:var(--paper);border:1px solid var(--edge);border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,.06)}
+    h2{margin:0 0 12px;font-size:28px;letter-spacing:.2px}
+    h3{margin:24px 0 8px;font-size:20px}
+    p{margin:10px 0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:22px}
+    @media (min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    .note{padding:12px 16px;background:var(--chip);border-left:4px solid #2563eb;border:1px solid var(--edge);border-radius:8px}
+
+    /* Simple bar chart */
+    .chart{display:flex;justify-content:center;margin:16px 0}
+    .bar{width:min(760px,100%);background:#e2e8f0;border-radius:8px;overflow:hidden;display:flex;height:32px}
+    .intangible{background:#2563eb;width:90%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .tangible{background:#94a3b8;width:10%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+
+    /* Footer */
+    .site-footer{background:#26292d;color:#f0f0f0;text-align:center;padding:15px 0;font-size:14px;letter-spacing:.3px}
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="topbar" role="banner">
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-controls="sidebar" aria-expanded="false">
+      <span class="burger-bar"></span><span class="burger-bar"></span><span class="burger-bar"></span>
+    </button>
+    <div class="topbar-title">PIN Valuations</div>
+  </div>
+
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary">
+      <nav class="menu">
+        <h2 class="menu-heading">Dashboard</h2>
+        <ul class="navlinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="business.html">Business Valuation Methodology</a></li>
+          <li><a href="comparison.html">Comparison to Other Valuation Methods</a></li>
+          <li><a href="history.html">Platform History</a></li>
+          <li><a href="methodology.html">Where Our Methodology is Entrenched in Law</a></li>
+          <li><a href="industry.html">Business Valuation by Industry</a></li>
+          <li><a href="intangible.html">Intangible Asset Percentage — “Secret Chart”</a></li>
+          <li><a href="family_wealth.html">Experience — Your Family’s Wealth is a Sacred Trust</a></li>
+          <li><a href="sell_business.html">How to Sell Your Business</a></li>
+          <li><a href="expropriation.html">Business Valuation for Expropriation</a></li>
+          <li><a href="fraud_and_flaws.html">Valuation Fraud and Flaws to Avoid</a></li>
+          <li><a href="assets_valuation.html">Debt Restructuring and Asset Valuation</a></li>
+          <li><a href="case_law.html">Case Law &amp; 25 Factors</a></li>
+          <li><a href="faqs.html">FAQs — Top 44 Questions &amp; Answers</a></li>
+          <li><a href="natural_resource.html">Canada’s Natural Resources &amp; Intangibles</a></li>
+          <li><a href="podcast.html">Podcast / News / Geopolitical Notes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="menu-label" aria-hidden="true">Learn More</li>
+          <li><a href="business.html#factors">25 Factors (Index)</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Backdrop for mobile -->
+    <div id="backdrop" class="backdrop" hidden></div>
+
+    <!-- Main content -->
+    <main class="content" id="main" tabindex="-1">
+      <!-- Hero -->
+      <header class="hero">
+        <div class="wrap">
+          <h1 class="title">Intangible Asset Specialist</h1>
+          <p class="subtitle">Experience-led measurement of the ~90% of value traditional methods miss — aligned to Fair Market Value (Canada Income Tax Act).</p>
+          <div class="chiprow" aria-label="Quick links">
+            <a class="chip" href="#chart">Intangible Assets Chart</a>
+            <a class="chip" href="#method">Our Method</a>
+            <a class="chip" href="#contact">Contact & Pricing</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Intangible chart -->
+      <section id="chart">
+        <div class="wrap">
+          <div class="card">
+            <h2>Intangible Assets Chart</h2>
+            <p>The parameters for business valuations have fundamentally changed. The chart below illustrates that <strong>~90% of business value</strong> today is intangible.</p>
+            <div class="chart">
+              <div class="bar" role="img" aria-label="Bar showing 90% intangible value and 10% tangible value">
+                <div class="intangible">90% Intangible</div>
+                <div class="tangible">10% Tangible</div>
+              </div>
+            </div>
+            <p class="muted">Typical examples of intangibles: processes, workforce quality, brand, distribution, data, IP, contracts, and operational know-how.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Methodology -->
+      <section id="method">
+        <div class="wrap">
+          <div class="card">
+            <h2>Why Our Methodology is Different</h2>
+            <p>Many valuators still lean on outdated approaches or a vague “goodwill” bucket without explaining what it means or how it’s derived. Our proprietary <strong>25 Factors Affecting Business Valuation</strong> framework identifies, measures, weighs, and values <em>all</em> assets — intangible and tangible — while staying aligned with the <strong>Canada Income Tax Act</strong> FMV standard.</p>
+            <div class="note">Built for how real investors evaluate private companies today — with complete treatment of intangibles.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="wrap">
+          <div class="card">
+            <h2>Contact & Professional Valuations</h2>
+            <p><strong>Eric Jordan, CPPA</strong><br>
+              Phone: <a href="tel:+18773558004">877&nbsp;355-8004</a><br>
+              Email: <a href="mailto:pindotca@gmail.com">pindotca@gmail.com</a>
+            </p>
+            <p>Professional business valuations in Canada, typically <strong>$1,500 – $15,000</strong>.</p>
+            <p>Use cases: sales & purchases, partnership disputes, share value determination, CRA-related work (Section 86 freezes, Section 85 rollovers), and divorce settlements — all with full consideration of intangible assets.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">© <span id="yr"></span> PIN Valuations</footer>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Burger / drawer behavior (same pattern as history.html)
+    (function(){
+      const burger   = document.getElementById('burger');
+      const backdrop = document.getElementById('backdrop');
+      const links    = document.querySelectorAll('.navlinks a');
+      const mq       = window.matchMedia('(max-width: 960px)');
+      let lastFocus;
+
+      function openMenu(){
+        document.body.classList.add('menu-open');
+        burger.setAttribute('aria-expanded','true');
+        if(backdrop){ backdrop.hidden=false; requestAnimationFrame(()=>backdrop.classList.add('show')); }
+        lastFocus = document.activeElement;
+        links[0]?.focus();
+      }
+      function closeMenu(){
+        document.body.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded','false');
+        if(backdrop){ backdrop.classList.remove('show'); setTimeout(()=>backdrop.hidden=true,200); }
+        lastFocus?.focus?.();
+      }
+      function toggleMenu(){
+        document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
+      }
+
+      burger?.addEventListener('click', toggleMenu);
+      backdrop?.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', e => { if (e.key==='Escape') closeMenu(); });
+      links.forEach(a => a.addEventListener('click', () => { if (mq.matches) closeMenu(); }));
+
+      // Mark current page active
+      const current = location.pathname.split('/').pop(); // e.g., 'intangible.html'
+      links.forEach(a => { if (a.getAttribute('href')?.endsWith(current)) a.classList.add('active'); });
+    })();
+  </script>
+</body>
+</html>

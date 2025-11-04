@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pin. CA Valuation — Eric Jordan | Minority Interest</title>
+  <style>/* baseline CSS same as others */ :root{--bg:#0f1115;--panel:#151823;--text:#e6e7eb;--muted:#a7adbb;--accent:#7c9cff;--border:#23283a;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+  html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#0f1115 0%,#121525 100%);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji"}
+  .app{display:grid;grid-template-columns:280px 1fr;min-height:100svh}@media(max-width:900px){.app{grid-template-columns:1fr}}.sidebar{position:sticky;top:0;height:100svh;padding:18px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;gap:16px;z-index:1000}
+  @media(max-width:900px){.sidebar{position:fixed;inset:0 auto 0 0;width:80%;max-width:320px;transform:translateX(-105%);transition:transform .25s ease;box-shadow:var(--shadow)}.sidebar.open{transform:none}}
+  .brand{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--border)}.brand .logo{width:30px;height:30px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#b993ff);color:#0b0e1a;font-weight:900;border-radius:10px}
+  .brand .name{font-weight:700;letter-spacing:.2px}nav{display:flex;flex-direction:column;gap:6px;overflow:auto;padding-right:6px}nav a{display:flex;gap:10px;align-items:center;padding:10px 12px;text-decoration:none;color:var(--text);border-radius:12px;border:1px solid transparent}
+  nav a:hover{background:rgba(124,156,255,.08);border-color:var(--border)}nav a.active{background:rgba(124,156,255,.16);border-color:rgba(124,156,255,.35)}.nav-section{margin-top:8px;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;padding:0 4px}
+  .topbar{position:sticky;top:0;z-index:999;display:none;align-items:center;gap:12px;padding:12px 14px;background:linear-gradient(180deg,rgba(15,17,21,.85),rgba(18,21,37,.85));backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}@media(max-width:900px){.topbar{display:flex}}
+  .burger{width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:var(--panel);display:grid;place-items:center;cursor:pointer}.burger:focus-visible{outline:2px solid var(--accent)}.burger svg{width:22px;height:22px}
+  main{padding:36px clamp(18px,3vw,40px);max-width:1100px;width:100%;margin:0 auto}.hero{background:linear-gradient(135deg,rgba(124,156,255,.15),rgba(185,147,255,.08));border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:grid;gap:10px}
+  .hero h1{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.1}.hero p{margin:0;color:var(--muted)}section{margin:26px 0;padding:22px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+  section h2{margin-top:0;font-size:clamp(20px,2.6vw,28px);line-height:1.2}.callout{margin:14px 0;padding:14px 16px;border-left:4px solid var(--accent);background:rgba(124,156,255,.08);border-radius:12px}footer{margin:40px 0 10px;color:var(--muted);text-align:center}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sidebar{transition:none}}</style>
+</head>
+<body>
+  <div class="topbar">
+    <button class="burger" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand" style="flex:1;max-width:680px"><div class="logo">P</div><div class="name">Pin.CA Valuations</div></div>
+  </div>
+
+  <div class="app">
+    <aside id="sidebar" class="sidebar" aria-label="Primary">
+      <div class="brand"><div class="logo" aria-hidden="true">EJ</div><div class="name">Pin.ca Valuation – Eric Jordan</div></div>
+      <div class="nav-section">Navigate</div>
+      <nav id="nav">
+        <a href="/public/pages/business.html"><span>← Back to Business Page</span></a>
+        <a href="#methodology"><span>“25 Factors” Methodology</span></a>
+        <div class="nav-section">25 Factors</div>
+        <a href="purpose.html#purpose"><span>Purpose</span></a>
+        <a href="history.html"><span>History</span></a>
+        <a href="financials.html"><span>Financials</span></a>
+        <a href="return.html"><span>Return on Investment (ROI)</span></a>
+        <a href="liquidity.html#liquidity"><span>Liquidity</span></a>
+        <a href="cost-of-liquidation.html#cost-of-liquidation"><span>Cost of Liquidation</span></a>
+        <a href="hard-assets.html#hard-assets"><span>Hard Assets</span></a>
+        <a href="utility-sustainability-scalability.html#utility-sustainability-scalability"><span>Utility, Sustainability, and Scalability</span></a>
+        <a href="research-development.html#research-development"><span>Research &amp; Development (R&amp;D)</span></a>
+        <a href="processes-procedures-systems-documentation.html#processes-procedures-systems-documentation"><span>Processes, Procedures, Systems, and Documentation</span></a>
+        <a href="shareholder-agreement.html#shareholder-agreement"><span>Shareholder Agreement</span></a>
+        <a href="management-capability-workforce-intellectual-property.html#management-capability-workforce-intellectual-property"><span>Management Capability, Workforce, and Intellectual Property</span></a>
+        <a href="client-base.html#client-base"><span>Client Base</span></a>
+        <a href="supply-chain.html#supply-chain"><span>Supply Chain</span></a>
+        <a href="distribution-network.html#distribution-network"><span>Distribution Network</span></a>
+        <a href="industry-benchmarks.html#industry-benchmarks"><span>Industry benchmarks (averages)</span></a>
+        <a href="terms-of-lease.html#terms-of-lease"><span>Terms of Lease</span></a>
+        <a href="terms-of-sale.html#terms-of-sale"><span>Terms of Sale</span></a>
+        <a href="#minority-interest" class="active"><span>Minority Interest</span></a>
+        <a href="special-interest-purchaser.html#special-interest-purchaser"><span>Special Interest Purchaser</span></a>
+        <a href="geopolitical-considerations.html#geopolitical-considerations"><span>Geopolitical considerations</span></a>
+        <a href="risk.html#risk"><span>Risk</span></a>
+        <a href="opportunity.html#opportunity"><span>Opportunity</span></a>
+        <a href="#conclusion"><span>Conclusion</span></a>
+      </nav>
+    </aside>
+
+    <main>
+      <header id="home" class="hero">
+        <h1>Disruptive Valuation Methodology</h1>
+        <p>Experience-led, purpose-built valuations for fair market value—beyond rigid formulas.</p>
+      </header>
+
+      <section id="methodology">
+        <h2>Eric Jordan’s “25 Factors Affecting Business Valuation”</h2>
+        <p>Mark D Wiseman has been added to a list of the top 150 Venture Capitalists in the world (Researched in March 2025) none of whom are accountants.</p>
+        <p>The 150 top Venture Capitalists in the world who value some of the world's most valuable companies should be considered the world’s best valuation experts. And again, none of them, to the best of our research, are accountants. Does anyone seriously think these top experts would employ the old hard asset, income, or market approach to business valuation used by most accountant based valuators today? Ask Warren Buffet?</p>
+        <p>Venture Capitalists use honest accountants to supply reliable financial data that has generally been arranged for tax purposes. Clients have already paid these accountants tens of thousands of dollars to produce these documents that are generally needed to start a valuation.</p>
+        <p>This is also the basis of Eric Jordan’s “25 Factors Affecting Business Valuation” methodology. Honest Accountants produce the financial records required to start the valuation process. This is where, in private company valuations, experienced business owner/operators take over. These people with 15 years or more of relevant business owner/operator experience, are trained in the use of Eric Jordan’s “25 Factors Affecting Business Valuation”. They identify, measure, weigh, and put an estimated value on the intangible assets that make up the majority of most company value since at least 2009. This is when the Mark D Wiseman/Skype moment changed business valuation history.</p>
+        <p>Clients have paid their accountants tens and sometimes hundreds of thousands of dollars for accounting. We trust these professionals for accounting and tax purposes; but not for business valuation.</p>
+        <div class="callout"><strong>None</strong> of the top 150 valuators in the world are accountants.</div>
+      </section>
+
+      <!-- UPDATED CONTENT -->
+      <section id="minority-interest">
+        <h2>Minority Interest</h2>
+        <p>There is no known math or accounting formula for minority interest. Our methodology uses experience to truly understand this and assign a weight as required by the Canadian Income Tax Act to determine “fair market value”.</p>
+
+        <p>A valuator with a background in business ownership and management can assess the impact of minority interests on a company's value. They can evaluate factors such as control premiums, discounts for lack of control, and the rights of minority shareholders.</p>
+
+        <p>Meanwhile, an accountant may lack the practical knowledge required to assess these impacts, potentially leading to an incomplete understanding of control premiums, discounts for lack of control, and minority rights. Accountants without practical business experience might not fully consider these elements.</p>
+
+        <p>Business brokers may likewise miss the practical implications of minority rights and control limitations. Sale price data typically does not isolate these effects either.</p>
+
+        <h3>Disruptive Valuation Methodology</h3>
+        <p>“25 Factors” + 15+ years owner-operator experience → most accurate, stakeholder-aligned outcomes.</p>
+
+        <div class="callout">
+          <p><strong>WHY</strong> rely on outdated methods?</p>
+          <p>Hard Asset, Income, and Market approaches have known blind spots for modern, intangibles-driven businesses.</p>
+        </div>
+
+        <p>Venture Capitalists value the world’s leaders; none of the top 150 are accountants. Trust accountants for accounting; use entrepreneurial judgment for valuation.</p>
+        <p>Wiseman’s Skype case (2009) highlights why traditional methods underweight intangibles.</p>
+      </section>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <ul>
+          <li>Purpose-first, experience-led valuations.</li>
+          <li>Intangible assets drive most company value post-2009.</li>
+          <li>Use accountants for accurate financials; use experienced owner/operators for valuation.</li>
+          <li>Adopt the “25 Factors” methodology for fair market value aligned with stakeholder reality.</li>
+        </ul>
+      </section>
+      <footer>© <span id="year"></span> Eric Jordan — Disruptive Valuation</footer>
+    </main>
+  </div>
+
+  <script>
+    const burgerBtn=document.getElementById('burgerBtn'),sidebar=document.getElementById('sidebar'),nav=document.getElementById('nav');
+    const closeSidebar=()=>{sidebar.classList.remove('open');burgerBtn&&burgerBtn.setAttribute('aria-expanded','false')}
+    const openSidebar=()=>{sidebar.classList.add('open');burgerBtn&&burgerBtn.setAttribute('aria-expanded','true')}
+    burgerBtn&&burgerBtn.addEventListener('click',()=>{sidebar.classList.contains('open')?closeSidebar():openSidebar()});
+    nav.addEventListener('click',e=>{if(e.target.closest('a')&&matchMedia('(max-width:900px)').matches)closeSidebar()});
+    const sections=[...document.querySelectorAll('main section, header.hero')],links=[...document.querySelectorAll('nav a')];
+    const byId=id=>links.find(a=>a.getAttribute('href')===`#${id}`);
+    const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.id,link=byId(id);if(!link)return;if(entry.isIntersecting){links.forEach(a=>a.classList.remove('active'));link.classList.add('active');history.replaceState(null,'',`#${id}`)}})},{rootMargin:'-40% 0px -55% 0px',threshold:0.01});
+    sections.forEach(sec=>observer.observe(sec)); document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

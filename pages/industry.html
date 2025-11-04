@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Valuation by Industry — PIN Valuations</title>
+  <link rel="canonical" href="https://pin.ca/pages/industry.html">
+  <meta name="description" content="Industry-specific business valuation examples including auto repair shops and over 50 additional business types across Canada.">
+
+  <style>
+    :root{
+      /* keep your palette */
+      --bg:#0b1020; --ink:#111; --brand:#1d4ed8;
+      --paper:#ffffff; --edge:#e2e8f0; --chip:#f1f5f9;
+      --shell:#0f172a; --shell-edge:#1f2937;
+      --sidebar-w:260px; --transition:240ms ease;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font-family:Arial,Helvetica,sans-serif;background-color:var(--bg);color:var(--ink);line-height:1.6}
+
+    /* Topbar */
+    .topbar{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      height:56px;display:flex;align-items:center;gap:12px;padding:0 12px;
+      background:linear-gradient(180deg,#0b1020 0%,#11183a 100%);color:#e5e7eb;
+      border-bottom:1px solid rgba(148,163,184,.25);box-shadow:0 6px 18px rgba(2,6,23,.35)
+    }
+    .topbar-title{font-weight:800;letter-spacing:.2px}
+
+    /* Burger */
+    .burger{
+      width:44px;height:36px;display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+      border:1px solid var(--shell-edge);border-radius:8px;background:transparent;color:#e5e7eb;cursor:pointer;padding:0 8px;
+    }
+    .burger:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
+    .burger-bar{height:2px;width:22px;margin:0 auto;background:currentColor;transition:transform var(--transition),opacity var(--transition)}
+    body.menu-open .burger-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    body.menu-open .burger-bar:nth-child(2){opacity:0}
+    body.menu-open .burger-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* Layout */
+    .app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;margin-top:56px}
+    .content{overflow:hidden}
+
+    /* Sidebar */
+    .sidebar{
+      background:var(--paper);color:#0f172a;border-right:1px solid var(--edge);padding:16px;
+      position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;box-shadow:4px 0 24px rgba(2,6,23,.08);z-index:1002
+    }
+    .menu-heading{margin:16px 0 8px;font-size:14px;color:#64748b;text-transform:uppercase;letter-spacing:.08em}
+    .menu-label{margin-top:16px;color:#9aa4b2;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .navlinks{list-style:none;padding:0;margin:0}
+    .navlinks li+li{margin-top:8px}
+    .navlinks a{
+      display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:10px;color:#0f172a;
+      text-decoration:none;border:1px solid transparent;transition:background .18s,border-color .18s,color .18s,box-shadow .18s
+    }
+    .navlinks a:hover{background:var(--chip);border-color:var(--edge)}
+    .navlinks a.active{
+      background:linear-gradient(90deg,#eef2ff 0%,#ffffff 60%);color:#1d4ed8;border-color:#c7d2fe;
+      box-shadow:0 4px 12px rgba(37,99,235,.12) inset;
+    }
+
+    /* Collapse on desktop when closed */
+    body:not(.menu-open) .sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
+    body:not(.menu-open) .app{grid-template-columns:0 1fr}
+
+    /* Mobile drawer */
+    @media (max-width:960px){
+      .app{grid-template-columns:1fr}
+      .sidebar{
+        position:fixed;top:56px;left:0;bottom:0;width:min(86vw,320px);height:auto;max-height:none;
+        transform:translateX(-100%);transition:transform .25s ease;box-shadow:0 12px 30px rgba(2,6,23,.30)
+      }
+      body.menu-open .sidebar{transform:translateX(0)}
+    }
+    .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;transition:opacity .2s ease;z-index:1001;pointer-events:none}
+    .backdrop.show{opacity:1;pointer-events:auto}
+
+    /* Hero (keeps your look) */
+    header.hero{
+      background:linear-gradient(180deg,#0b1020 0%,#11183a 100%);color:#fff;text-align:center;padding:40px 20px
+    }
+    h1,h2,h3{color:var(--brand)}
+
+    /* Your main card */
+    .wrap{max-width:1000px;margin:40px auto;padding:0 20px}
+    .card{background:#fff;border:1px solid var(--edge);border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.1);padding:40px}
+    table{width:100%;border-collapse:collapse;margin:20px 0}
+    th,td{border:1px solid var(--edge);padding:10px;text-align:left}
+    th{background:#f8fafc}
+    ul{list-style:square;margin-left:20px}
+
+    footer.site-footer{background:#26292d;color:#e5e7eb;text-align:center;padding:15px;margin-top:40px}
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar" role="banner">
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-controls="sidebar" aria-expanded="false">
+      <span class="burger-bar"></span><span class="burger-bar"></span><span class="burger-bar"></span>
+    </button>
+    <div class="topbar-title">PIN Valuations</div>
+  </div>
+
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary">
+      <nav class="menu">
+        <h2 class="menu-heading">Dashboard</h2>
+        <ul class="navlinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="business.html">Business Valuation Methodology</a></li>
+          <li><a href="comparison.html">Comparison to Other Valuation Methods</a></li>
+          <li><a href="history.html">Platform History</a></li>
+          <li><a href="methodology.html">Where Our Methodology is Entrenched in Law</a></li>
+          <li><a href="industry.html">Business Valuation by Industry</a></li>
+          <li><a href="intangible.html">Intangible Asset Percentage — “Secret Chart”</a></li>
+          <li><a href="family_wealth.html">Experience — Your Family’s Wealth is a Sacred Trust</a></li>
+          <li><a href="sell_business.html">How to Sell Your Business</a></li>
+          <li><a href="expropriation.html">Business Valuation for Expropriation</a></li>
+          <li><a href="fraud_and_flaws.html">Valuation Fraud and Flaws to Avoid</a></li>
+          <li><a href="assets_valuation.html">Debt Restructuring and Asset Valuation</a></li>
+          <li><a href="case_law.html">Case Law &amp; 25 Factors</a></li>
+          <li><a href="faqs.html">FAQs — Top 44 Questions &amp; Answers</a></li>
+          <li><a href="natural_resource.html">Canada’s Natural Resources &amp; Intangibles</a></li>
+          <li><a href="podcast.html">Podcast / News / Geopolitical Notes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+
+          <li class="menu-label" aria-hidden="true">Learn More</li>
+          <li><a href="business.html#factors">25 Factors (Index)</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Backdrop -->
+    <div id="backdrop" class="backdrop" hidden></div>
+
+    <!-- Main content -->
+    <main class="content" id="main" tabindex="-1">
+      <!-- Hero -->
+      <header class="hero">
+        <h1>Business Valuation by Industry</h1>
+        <p>Auto Repair Shop Example &amp; Industry Categories</p>
+      </header>
+
+      <div class="wrap">
+        <div class="card">
+          <h2>Auto Repair Shops (Canada)</h2>
+          <p>Auto Repair Shops: Equipped with hydraulic lifts, diagnostic tools, and specialized repair equipment for servicing vehicles.</p>
+          <p>This is an asset valuation example for auto repair shop and vehicle maintenance services. A full business valuation can be added.</p>
+          <p>The purpose could be for sale purposes, financing purposes, divorce, partnership disputes, tax, or other purposes.</p>
+
+          <h3>Valuation Process</h3>
+          <ul>
+            <li>Calculate the net proceeds in your balance sheet over and above liabilities.</li>
+            <li>Apply the Eric Jordan “25 Factors Affecting Business Valuation” methodology to find the value of intangible assets.</li>
+            <li>Estimate normalized net income and assign a multiple from the “25 Factors.”</li>
+            <li>Conduct a fair market appraisal on the tools and equipment in a modern repair facility.</li>
+            <li>Determine the value of leasehold improvements.</li>
+            <li>Complete a 5 Senses Inspection Report to support the valuation.</li>
+          </ul>
+
+          <h2>1. 5 Senses Inspection Summary</h2>
+          <ul>
+            <li><strong>Sight:</strong> Bays and equipment functional but show moderate wear. Lighting uneven; signage worn.</li>
+            <li><strong>Sound:</strong> Normal operation noise; air compressors slightly loud.</li>
+            <li><strong>Smell:</strong> Typical automotive odours present; ventilation could be improved.</li>
+            <li><strong>Touch:</strong> Surfaces greasy; bay doors stiff and require lubrication.</li>
+            <li><strong>Taste:</strong> Not applicable.</li>
+          </ul>
+          <p><strong>Condition:</strong> Fair to Good – Functional, with some areas requiring upgrades or maintenance.</p>
+
+          <h2>2. Equipment Valuation</h2>
+          <table>
+            <tr><th>Category</th><th>Quantity</th><th>Depreciated Value (Range)</th></tr>
+            <tr><td>Hydraulic Lifts</td><td>3</td><td>$9,000–$27,000</td></tr>
+            <tr><td>Wheel Balancer</td><td>1</td><td>$3,000–$4,500</td></tr>
+            <tr><td>Tire Changer</td><td>1</td><td>$2,000–$4,000</td></tr>
+            <tr><td>Diagnostic Tools (3 units)</td><td>3</td><td>$5,400–$27,000</td></tr>
+            <tr><td>Alignment Machine</td><td>1</td><td>$12,000–$24,000</td></tr>
+            <tr><td>Air Compressors</td><td>2</td><td>$2,400–$7,200</td></tr>
+            <tr><td>Brake Lathe</td><td>1</td><td>$4,200–$9,000</td></tr>
+            <tr><td>Oil Change Equipment</td><td>3</td><td>$3,600–$9,000</td></tr>
+            <tr><td>Cooling System Service Equipment</td><td>1</td><td>$1,500–$3,600</td></tr>
+            <tr><td>Battery Testers &amp; Chargers</td><td>2</td><td>$600–$2,400</td></tr>
+            <tr><td>Workbenches &amp; Tool Storage</td><td>3</td><td>$5,400–$18,000</td></tr>
+            <tr><td>Hand Tools</td><td>N/A</td><td>$6,000–$30,000</td></tr>
+            <tr><td>Exhaust Extraction System</td><td>1</td><td>$1,800–$6,000</td></tr>
+            <tr><td>Parts Washer</td><td>1</td><td>$900–$2,400</td></tr>
+          </table>
+          <p><strong>Total Equipment Value:</strong> Low End: $57,300 | High End: $173,100</p>
+
+          <h2>3. Leasehold Improvements Valuation</h2>
+          <table>
+            <tr><th>Category</th><th>Square Footage</th><th>Depreciated Value (Range)</th></tr>
+            <tr><td>Flooring (Epoxy Coating)</td><td>1,000–1,500 sq. ft.</td><td>$9,000–$22,500</td></tr>
+            <tr><td>Bay Doors (3 total)</td><td>N/A</td><td>$7,500–$15,000</td></tr>
+            <tr><td>Lighting</td><td>N/A</td><td>$3,000–$8,000</td></tr>
+            <tr><td>Ventilation &amp; Exhaust</td><td>N/A</td><td>$10,000–$20,000</td></tr>
+            <tr><td>Electrical Upgrades</td><td>N/A</td><td>$5,000–$15,000</td></tr>
+            <tr><td>Plumbing &amp; Drains</td><td>N/A</td><td>$10,000–$25,000</td></tr>
+            <tr><td>HVAC System</td><td>N/A</td><td>$10,000–$20,000</td></tr>
+            <tr><td>Office &amp; Reception Area</td><td>300–400 sq. ft.</td><td>$5,000–$10,000</td></tr>
+            <tr><td>Restrooms</td><td>N/A</td><td>$5,000–$8,000</td></tr>
+            <tr><td>Signage</td><td>N/A</td><td>$2,000–$5,000</td></tr>
+            <tr><td>Parking Lot Improvements</td><td>N/A</td><td>$5,000–$15,000</td></tr>
+          </table>
+          <p><strong>Total Leasehold Improvements Value:</strong> Low End: $71,500 | High End: $163,500</p>
+
+          <h2>4. Overall Asset Valuation</h2>
+          <table>
+            <tr><th>Category</th><th>Low-End Estimate</th><th>High-End Estimate</th></tr>
+            <tr><td>Equipment</td><td>$57,300</td><td>$173,100</td></tr>
+            <tr><td>Leasehold Improvements</td><td>$71,500</td><td>$163,500</td></tr>
+            <tr><td><strong>Total Asset Value</strong></td><td><strong>$128,800</strong></td><td><strong>$336,600</strong></td></tr>
+          </table>
+
+          <p>The three-bay facility has a current asset value range of $128,800–$336,600, based on equipment and leasehold improvements.</p>
+
+          <h3>Why Experience Matters</h3>
+          <p>Relevant ownership and operational experience—typically 10–20 years—is essential for determining accurate valuations. Business valuation is both an art and a science that requires hands-on knowledge of operations, not just accounting expertise.</p>
+
+          <h2>Additional Industry Examples</h2>
+          <p>The list below will become available soon.</p>
+          <ul>
+            <li>3D Printing Studios</li>
+            <li>Appliance Repair Services</li>
+            <li>Audio Recording Studio Calgary</li>
+            <li>Auto Body and Collision Repair Shops</li>
+            <li>Auto Detailing Services</li>
+            <li>Bakery and Pastry Kitchens Regina</li>
+            <li>Bicycle Repair and Retail Shops</li>
+            <li>Boat and Marine Repair Services</li>
+            <li>Brewpubs and Microbreweries</li>
+            <li>Catering Companies with Full-Service Kitchens Saskatoon</li>
+            <li>Commercial Cleaning Services (Carpet Cleaning) Red Deer</li>
+            <li>Commercial Printing and Copy Centres (Toronto)</li>
+            <li>Commercial Window Cleaning Services</li>
+            <li>Construction Contracting Business Edmonton</li>
+            <li>Custom Jewelry Manufacturing</li>
+            <li>Dental Clinics</li>
+            <li>Drone Photography and Survey Services</li>
+            <li>Event Equipment Rentals</li>
+            <li>HVAC Repair and Installation Services Ottawa</li>
+            <li>Landscaping and Lawn Care Services</li>
+            <li>Medical and Aesthetic Spas</li>
+            <li>Metal Fabrication Shops</li>
+            <li>Pet Grooming Salons</li>
+            <li>Photography Studios</li>
+            <li>Plumbing Services Winnipeg</li>
+            <li>Restaurant and Food Truck Businesses Kelowna</li>
+            <li>Sign-Making and Graphics Shops</li>
+            <li>Small Gym or Fitness Studio</li>
+            <li>Solar Panel Installation Services</li>
+            <li>Tattoo and Piercing Studios</li>
+            <li>Tree Trimming and Removal Services</li>
+            <li>Vancouver Photography Studio</li>
+            <li>Woodworking and Cabinetry Shops</li>
+          </ul>
+
+          <h3>Pricing</h3>
+          <p>Obtain a professional business valuation in Canada, priced between <strong>$1,500 and $15,000</strong>.</p>
+          <p>This service supports business sales, purchases, partnership disputes, share value determination, and tax-related needs (CRA compliance, Section 86 estate freezes, Section 85 rollovers). It also assists in divorce settlements with valuations aligned with the Canadian Income Tax Act, including intangible assets.</p>
+
+          <h3>Contact</h3>
+          <p><strong>Eric Jordan, CPPA</strong><br>Email: <a href="mailto:pindotca@gmail.com">pindotca@gmail.com</a></p>
+        </div>
+      </div>
+
+      <footer class="site-footer">© <span id="yr"></span> PIN Valuations</footer>
+    </main>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Burger / drawer
+    (function(){
+      const burger   = document.getElementById('burger');
+      const backdrop = document.getElementById('backdrop');
+      const links    = document.querySelectorAll('.navlinks a');
+      const mq       = window.matchMedia('(max-width: 960px)');
+      let lastFocus;
+
+      function openMenu(){
+        document.body.classList.add('menu-open');
+        burger.setAttribute('aria-expanded','true');
+        if(backdrop){ backdrop.hidden=false; requestAnimationFrame(()=>backdrop.classList.add('show')); }
+        lastFocus = document.activeElement;
+        links[0]?.focus();
+      }
+      function closeMenu(){
+        document.body.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded','false');
+        if(backdrop){ backdrop.classList.remove('show'); setTimeout(()=>backdrop.hidden=true,200); }
+        lastFocus?.focus?.();
+      }
+      function toggleMenu(){ document.body.classList.contains('menu-open') ? closeMenu() : openMenu(); }
+
+      burger?.addEventListener('click', toggleMenu);
+      backdrop?.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+      links.forEach(a => a.addEventListener('click', () => { if (mq.matches) closeMenu(); }));
+
+      // Mark current page active
+      const current = location.pathname.split('/').pop();
+      links.forEach(a => { if (a.getAttribute('href')?.endsWith(current)) a.classList.add('active'); });
+    })();
+  </script>
+</body>
+</html>

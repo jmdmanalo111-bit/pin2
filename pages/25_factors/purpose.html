@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pin. CA Valuation — Eric Jordan | Purpose</title>
+    <style>
+        :root{
+            --bg:#0f1115;
+            --panel:#151823;
+            --text:#e6e7eb;
+            --muted:#a7adbb;
+            --accent:#7c9cff;
+            --border:#23283a;
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+            --radius:18px;
+        }
+        html{scroll-behavior:smooth}
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            background:linear-gradient(180deg, #0f1115 0%, #121525 100%);
+            color:var(--text);
+            font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+        }
+        /* Layout */
+        .app{display:grid; grid-template-columns: 280px 1fr; min-height:100svh}
+        @media (max-width: 900px){.app{grid-template-columns:1fr}}
+        /* Sidebar */
+        .sidebar{
+            position:sticky; top:0; height:100svh; padding:18px;
+            background:var(--panel); border-right:1px solid var(--border);
+            display:flex; flex-direction:column; gap:16px; z-index:1000;
+        }
+        @media (max-width: 900px){
+            .sidebar{
+                position:fixed; inset:0 auto 0 0; width:80%; max-width:320px;
+                transform:translateX(-105%); transition:transform .25s ease;
+                box-shadow:var(--shadow)}
+            .sidebar.open{ transform:none }
+        }
+        .brand{display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:12px; background:rgba(255,255,255,.03); border:1px solid var(--border)}
+        .brand .logo{width:30px; height:30px; display:grid; place-items:center; background:linear-gradient(135deg, var(--accent), #b993ff); color:#0b0e1a; font-weight:900; border-radius:10px}
+        .brand .name{font-weight:700; letter-spacing:.2px}
+        nav{display:flex; flex-direction:column; gap:6px; overflow:auto; padding-right:6px}
+        nav a{ display:flex; gap:10px; align-items:center; padding:10px 12px; text-decoration:none; color:var(--text); border-radius:12px; border:1px solid transparent }
+        nav a span{opacity:.9}
+        nav a:hover{ background:rgba(124,156,255,.08); border-color:var(--border) }
+        nav a.active{ background:rgba(124,156,255,.16); border-color:rgba(124,156,255,.35) }
+        .nav-section{margin-top:8px; color:var(--muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.12em; padding:0 4px}
+        /* Top bar for mobile */
+        .topbar{position:sticky; top:0; z-index:999; display:none; align-items:center; gap:12px; padding:12px 14px; background:linear-gradient(180deg, rgba(15,17,21,.85), rgba(18,21,37,.85)); backdrop-filter: blur(6px); border-bottom:1px solid var(--border)}
+        @media (max-width: 900px){.topbar{display:flex}}
+        .burger{width:44px; height:44px; border-radius:12px; border:1px solid var(--border); background:var(--panel); display:grid; place-items:center; cursor:pointer}
+        .burger:focus-visible{outline:2px solid var(--accent)}
+        .burger svg{width:22px; height:22px}
+        /* Main */
+        main{ padding:36px clamp(18px, 3vw, 40px); max-width: 1100px; width:100%; margin:0 auto }
+        .hero{ background:linear-gradient(135deg, rgba(124,156,255,.15), rgba(185,147,255,.08)); border:1px solid var(--border); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow); display:grid; gap:10px}
+        .hero h1{ margin:0; font-size: clamp(28px, 4vw, 40px); line-height:1.1 }
+        .hero p{ margin:0; color:var(--muted) }
+        section{ margin:26px 0; padding:22px; background:rgba(255,255,255,.02); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow) }
+        section h2{ margin-top:0; font-size: clamp(20px, 2.6vw, 28px); line-height:1.2 }
+        section h3{ margin:18px 0 6px; font-size: 1.05rem; color: var(--text)}
+        p{ margin: 10px 0 }
+        .callout{ margin:14px 0; padding:14px 16px; border-left:4px solid var(--accent); background:rgba(124,156,255,.08); border-radius:12px; color:var(--text) }
+        ul{margin:10px 0 12px 1.2rem}
+        li{ margin: 6px 0 }
+        footer{ margin:40px 0 10px; color:var(--muted); text-align:center }
+        /* Reduce motion */
+        @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .sidebar{transition:none} }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <button class="burger" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false" id="burgerBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+        <div class="brand" style="flex:1; max-width:680px">
+            <div class="logo">P</div>
+            <div class="name">Pin.CA Valuations</div>
+        </div>
+    </div>
+    <div class="app">
+        <aside id="sidebar" class="sidebar" aria-label="Primary">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">EJ</div>
+                <div class="name">Pin.ca Valuation – Eric Jordan</div>
+            </div>
+            <div class="nav-section">Navigate</div>
+            <nav id="nav">
+                <a href="../../business.html" class="back-link"><span>← Back to Business Page</span></a>
+                <a href="#methodology"><span>“25 Factors” Methodology</span></a>
+                <div class="nav-section">25 Factors</div>
+                <a href="#purpose"><span>Purpose</span></a>
+                <a href="history.html"><span>History</span></a>
+                <a href="financials.html"><span>Financials</span></a>
+                <a href="return.html"><span>Return on Investment (ROI)</span></a>
+                <a href="liquidity.html#liquidity"><span>Liquidity</span></a>
+                <a href="cost-of-liquidation.html#cost-of-liquidation"><span>Cost of Liquidation</span></a>
+                <a href="hard-assets.html#hard-assets"><span>Hard Assets</span></a>
+                <a href="utility-sustainability-scalability.html#utility-sustainability-scalability"><span>Utility, Sustainability, and Scalability</span></a>
+                <a href="research-development.html#research-development"><span>Research & Development (R&D)</span></a>
+                <a href="processes-procedures-systems-documentation.html#processes-procedures-systems-documentation"><span>Processes, Procedures, Systems, and Documentation</span></a>
+                <a href="shareholder-agreement.html#shareholder-agreement"><span>Shareholder Agreement</span></a>
+                <a href="management-capability-workforce-intellectual-property.html#management-capability-workforce-intellectual-property"><span>Management Capability, Workforce, and Intellectual Property</span></a>
+                <a href="client-base.html#client-base"><span>Client Base</span></a>
+                <a href="supply-chain.html#supply-chain"><span>Supply Chain</span></a>
+                <a href="distribution-network.html#distribution-network"><span>Distribution Network</span></a>
+                <a href="marketing.html#marketing"><span>Marketing (Advertising, PR, Brand, NFT, Crypto and Blockchain)</span></a>
+                <a href="dominance-in-market.html#dominance-in-market"><span>Dominance in the market</span></a>
+                <a href="industry-benchmarks.html#industry-benchmarks"><span>Industry benchmarks (averages)</span></a>
+                <a href="terms-of-lease.html#terms-of-lease"><span>Terms of lease</span></a>
+                <a href="terms-of-sale.html#terms-of-sale"><span>Terms of Sale</span></a>
+                <a href="minority-interest.html#minority-interest"><span>Minority Interest</span></a>
+                <a href="special-interest-purchaser.html#special-interest-purchaser"><span>Special Interest Purchaser</span></a>
+                <a href="geopolitical-considerations.html#geopolitical-considerations"><span>Geopolitical considerations</span></a>
+                <a href="risk.html#risk"><span>Risk</span></a>
+                <a href="opportunity.html#opportunity"><span>Opportunity</span></a>
+                <a href="#conclusion"><span>Conclusion</span></a>
+            </nav>
+        </aside>
+        <main>
+            <header id="home" class="hero">
+                <h1>Disruptive Valuation Methodology</h1>
+                <p>Experience-led, purpose-built valuations for fair market value—beyond rigid formulas.</p>
+            </header>
+            <section id="methodology">
+                <h2>Eric Jordan’s “25 Factors Affecting Business Valuation”</h2>
+                <p>Mark D Wiseman has been added to a list of the top 150 Venture Capitalists in the world (Researched in March 2025) none of whom are accountants.</p>
+                <p>The 150 top Venture Capitalists in the world who value some of the world's most valuable companies should be considered the world’s best valuation experts. And again, none of them, to the best of our research, are accountants. Does anyone seriously think these top experts would employ the old hard asset, income, or market approach to business valuation used by most accountant based valuators today? Ask Warren Buffet?</p>
+                <p>Venture Capitalists use honest accountants to supply reliable financial data that has generally been arranged for tax purposes. Clients have already paid these accountants tens of thousands of dollars to produce these documents that are generally needed to start a valuation.</p>
+                <p>This is also the basis of Eric Jordan’s “25 Factors Affecting Business Valuation” methodology. Honest Accountants produce the financial records required to start the valuation process. This is where, in private company valuations, experienced business owner/operators take over. These people with 15 years or more of relevant business owner/operator experience, are trained in the use of Eric Jordan’s “25 Factors Affecting Business Valuation”. They identify, measure, weigh, and put an estimated value on the intangible assets that make up the majority of most company value since at least 2009. This is when the Mark D Wiseman/Skype moment changed business valuation history.</p>
+                <p>Clients have paid their accountants tens and sometimes hundreds of thousands of dollars for accounting. We trust these professionals for accounting and tax purposes; but not for business valuation.</p>
+                <div class="callout"><strong>None</strong> of the top 150 valuators in the world are accountants.</div>
+            </section>
+            <section id="purpose">
+                <h2>Purpose</h2>
+                <p>There is no math or accounting formula here. Experience sets the tone. Tone gives a wider perspective for weighing assets at “fair market value” as required by the Canada Income Tax Act and the CRA Policy Paper. Only an experienced listener possesses the empathetic skills to pick up on tone. This helps the entrepreneurial valuator to choose what follow up questions need to be asked next.</p>
+                <p>Experience is crucial in understanding the purpose of the valuation, whether it is for sale, financing, succession planning, or other reasons. A valuator with prior business owner operator experience can tailor their approach to suit the specific purpose, ensuring an accurate and relevant assessment.</p>
+                <p>Meanwhile, an accountant may lack the specialized knowledge to determine the purpose of the valuation in the context of the specific industry or market dynamics, leading to a potentially inaccurate assessment. Accountants using the income approach might not account for the specific purpose of each valuation, potentially leading to inaccurate comparisons between businesses with different valuation objectives.</p>
+                <p>Business brokers may focus primarily on selling businesses rather than understanding the specific nuances of each valuation purpose, which could lead to an inaccurate assessment. Sale price data may not take into account the specific purpose of each valuation, resulting in inaccurate comparisons between businesses with different valuation goals and circumstances.</p>
+            </section>
+            <section id="conclusion">
+                <h2>Conclusion</h2>
+                <ul>
+                    <li>Purpose-first, experience-led valuations.</li>
+                    <li>Intangible assets drive most company value post-2009.</li>
+                    <li>Use accountants for accurate financials; use experienced owner/operators for valuation.</li>
+                    <li>Adopt the “25 Factors” methodology for fair market value aligned with stakeholder reality.</li>
+                </ul>
+            </section>
+            <footer> © <span id="year"></span> Eric Jordan — Disruptive Valuation </footer>
+        </main>
+    </div>
+
+    <!-- Updated script -->
+    <script>
+        // Burger toggle (mobile)
+        const burgerBtn = document.getElementById('burgerBtn');
+        const sidebar = document.getElementById('sidebar');
+        const nav = document.getElementById('nav');
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('open');
+            if (burgerBtn) burgerBtn.setAttribute('aria-expanded','false');
+        };
+        const openSidebar = () => {
+            sidebar.classList.add('open');
+            if (burgerBtn) burgerBtn.setAttribute('aria-expanded','true');
+        };
+        if (burgerBtn){
+            burgerBtn.addEventListener('click', () => {
+                sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+            });
+        }
+        // Close after clicking a link (mobile)
+        nav.addEventListener('click', (e) => {
+            if(e.target.closest('a') && window.matchMedia('(max-width: 900px)').matches){
+                closeSidebar();
+            }
+        });
+
+        // --- NAV NORMALIZATION & ACTIVE STATE ---
+
+        const links = Array.from(document.querySelectorAll('nav a'));
+        const isSamePageHash = a => a.getAttribute('href')?.startsWith('#');
+
+        // 1) Normalize: if a link points to this same page + hash, rewrite it to a pure hash (same-page anchor)
+        const normalizeSamePageLinks = () => {
+            links.forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href) return;
+                try {
+                    const url = new URL(href, window.location.href);
+                    if (url.hash && url.pathname.replace(/\/+$/, '') === window.location.pathname.replace(/\/+$/, '')) {
+                        a.setAttribute('href', url.hash); // convert to same-page hash
+                    }
+                } catch {
+                    /* ignore invalid URLs */
+                }
+            });
+        };
+        normalizeSamePageLinks();
+
+        // After normalization, recompute which are pure same-page links
+        const samePageLinks = links.filter(isSamePageHash);
+
+        // Helper to set active based on a specific <a>
+        const setActiveLink = (el) => {
+            links.forEach(a => a.classList.remove('active'));
+            if (el) el.classList.add('active');
+        };
+
+        // 2) Set active based on the current URL (exact match first, then hash+pathname)
+        const setActiveFromLocation = () => {
+            // Exact URL match (covers cross-page items)
+            let match = links.find(a => {
+                try { return new URL(a.href).href === window.location.href; }
+                catch { return false; }
+            });
+
+            if (!match && window.location.hash) {
+                // Same-page hash match
+                match = samePageLinks.find(a => a.getAttribute('href') === window.location.hash);
+            }
+
+            // If still nothing and we're at top with no hash, try a header/hero anchor if present
+            if (!match && !window.location.hash) {
+                match = samePageLinks.find(a => a.getAttribute('href') === '#home') ||
+                        samePageLinks.find(a => a.getAttribute('href') === '#methodology');
+            }
+
+            setActiveLink(match);
+        };
+
+        setActiveFromLocation();
+        window.addEventListener('hashchange', setActiveFromLocation);
+
+        // 3) IntersectionObserver only controls same-page anchors
+        const sections = Array.from(document.querySelectorAll('main section, header.hero'));
+        const byId = id => samePageLinks.find(a => a.getAttribute('href') === `#${id}`);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const link = byId(id);
+                if (!link) return; // don't touch cross-page nav items
+
+                if (entry.isIntersecting) {
+                    setActiveLink(link);
+
+                    // Update URL hash without scrolling (same-page only)
+                    if (window.location.hash !== `#${id}`) {
+                        history.replaceState(null, '', `#${id}`);
+                    }
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+
+        sections.forEach(sec => observer.observe(sec));
+
+        // Year footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

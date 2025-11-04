@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://pin.ca/" />
+  <link rel="alternate" hreflang="x-default" href="https://pin.ca/" />
+  <link rel="alternate" hreflang="en-CA" href="https://pin.ca/" />
+
+  <!-- Perf hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+  <!-- Core CSS (single source of truth) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ===== SEO Title + Description ===== -->
+  <title>Business Valuation & Appraisal in Canada — Eric Jordan, CPPA</title>
+  <meta name="description" content="Court-ready business valuations across Canada. Average fee ~$3,500 (range $1,500–$15,000). Backed by case law and Eric Jordan’s 25 Factors. Call 877-355-8004 for a fast estimate.">
+
+  <!-- ===== Enhanced SEO, OG & Twitter Meta ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PIN Valuations">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:url" content="https://pin.ca/">
+  <meta property="og:title" content="Business Valuation & Appraisal in Canada — Eric Jordan, CPPA | PIN Valuations">
+  <meta property="og:description" content="Accurate, court-ready business valuations across Canada for sales, disputes, divorce & CRA compliance. Average fee ~$3,500. Call 877-355-8004 for a fast estimate.">
+  <meta property="og:image" content="https://www.pin.ca/og/home-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Business valuation and appraisal services across Canada — PIN Valuations">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Business Valuation & Appraisal in Canada — Eric Jordan, CPPA">
+  <meta name="twitter:description" content="Court-ready business valuations for sales, disputes, divorce & CRA filings. Average fee ~$3,500. Call 877-355-8004 for a fast estimate.">
+  <meta name="twitter:image" content="https://www.pin.ca/og/home-1200x630.webp">
+  <meta name="twitter:site" content="@Biz_4_Sale_Rdo">
+
+  <!-- ===== Icons / PWA ===== -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.pin.ca/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.pin.ca/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="https://www.pin.ca/android-chrome-192x192.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.pin.ca/favicon-16x16.png"/>
+  <link rel="manifest" href="https://www.pin.ca/site.webmanifest"/>
+  <link rel="mask-icon" href="https://www.pin.ca/safari-pinned-tab.svg" color="#5236ab"/>
+  <link rel="shortcut icon" href="https://www.pin.ca/favicon.ico"/>
+  <meta name="apple-mobile-web-app-title" content="PIN.CA"/>
+  <meta name="application-name" content="PIN.CA"/>
+  <meta name="msapplication-TileColor" content="#5236ab"/>
+  <meta name="theme-color" content="#5236ab"/>
+
+  <!-- ===== Service Schema (keep) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Business Valuation & Appraisal",
+    "provider": {
+      "@type": "Organization",
+      "name": "PIN Valuations",
+      "url": "https://pin.ca/",
+      "logo": "https://www.pin.ca/android-chrome-192x192.png",
+      "sameAs": [
+        "https://www.facebook.com/EricJordanBusinessValuation/",
+        "https://www.linkedin.com/in/eric-jordan-cppa-6b5bb2132",
+        "https://www.instagram.com/pin.businessvaluation.ca/",
+        "https://twitter.com/Biz_4_Sale_Rdo",
+        "https://www.youtube.com/channel/UCOi7blz3hr1GCbzaR0B9LOA",
+        "https://open.spotify.com/show/6YM5tSqJjJLHgRHE6xli8z"
+      ],
+      "founder": { "@type": "Person", "name": "Eric Jordan, CPPA" }
+    },
+    "areaServed": { "@type": "Country", "name": "Canada" },
+    "description": "Professional business valuation and appraisal services across Canada for sales, disputes, divorce, CRA Section 85 & 86, and corporate planning. Certified, court-ready reports trusted nationwide.",
+    "offers": {
+      "@type": "Offer",
+      "price": 3500,
+      "priceCurrency": "CAD"
+    }
+  }
+  </script>
+
+  <!-- libs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Page-only helpers -->
+  <style>
+    .btn-gradient{background:linear-gradient(90deg,#2447f9,#00d4a6);color:#fff;border:none}.btn-gradient:hover{filter:brightness(1.06)}
+    .lead-tight{line-height:1.35}
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar" role="banner">
+    <button id="burger" class="burger" aria-label="Toggle menu" aria-controls="sidebar" aria-expanded="false">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+    <div class="topbar-title">PIN Valuations</div>
+  </header>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary">
+      <div class="logo">
+        <a href="/#home" aria-label="Home">
+          <img src="images/logo.png" alt="PIN Valuations company logo" width="48" height="48" />
+        </a>
+      </div>
+
+      <nav class="menu">
+        <h2 class="menu-heading">Dashboard</h2>
+        <ul id="navLinks">
+          <li><a href="#home"><i class="bi bi-house-door" aria-hidden="true"></i><span>Home</span></a></li>
+          <li><a href="#whyus"><i class="bi bi-stars" aria-hidden="true"></i><span>Why Choose Us</span></a></li>
+          <li><a href="#pricing"><i class="bi bi-cash-stack" aria-hidden="true"></i><span>Pricing</span></a></li>
+          <li><a href="#contact"><i class="bi bi-envelope" aria-hidden="true"></i><span>Contact</span></a></li>
+
+          <li class="menu-label" aria-hidden="true">Learn More</li>
+          <li><a href="pages/business.html">Business Valuation Methodology</a></li>
+          <li><a href="pages/comparison.html">Comparison to Other Valuation Methods</a></li>
+          <li><a href="pages/history.html">Platform History</a></li>
+          <li><a href="pages/methodology.html">Where Our Methodology is Entrenched in Law</a></li>
+          <li><a href="pages/industry.html">Business Valuation by Industry</a></li>
+          <li><a href="pages/intangible.html">Intangible Asset Percentage – “Secret Chart”</a></li>
+          <li><a href="pages/family_wealth.html">Experience – Your Family’s Wealth is a Sacred Trust</a></li>
+          <li><a href="pages/sell_business.html">How to Sell Your Business</a></li>
+          <li><a href="pages/expropriation.html">Business Valuation for Expropriation</a></li>
+          <li><a href="pages/fraud_and_flaws.html">Valuation Fraud and Flaws to Avoid</a></li>
+          <li><a href="pages/assets_valuation.html">Debt Restructuring and Asset Valuation</a></li>
+          <li><a href="pages/faqs.html">FAQs – Top 44 Questions &amp; Answers</a></li>
+          <li><a href="pages/natural_resource.html">Canada’s Natural Resources &amp; Intangibles</a></li>
+          <li><a href="pages/podcast.html">Podcast / News / Geopolitical Notes</a></li>
+          <li><a href="pages/contact.html">Contact (Page)</a></li>
+
+          <li class="menu-label" aria-hidden="true">Legal &amp; Method</li>
+          <li>
+            <a href="pages/case_law.html">
+              <i class="bi bi-journal-text" aria-hidden="true"></i>
+              <span>Case Law &amp; 25 Factors</span>
+            </a>
+          </li>
+          <li><a href="#25-factors">25 Factors of Valuation</a></li>
+          <li><a href="#5-senses">5 Senses Inspection Report</a></li>
+        </ul>
+      </nav>
+
+      <div class="extra" aria-hidden="true">…</div>
+    </aside>
+
+    <!-- Overlay for mobile -->
+    <div id="overlay" class="overlay" hidden></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="content" id="home" tabindex="-1">
+      <!-- Hero (H1 clarified for SEO) -->
+      <header class="hero text-white text-center py-5">
+        <div class="container">
+          <h1 class="mb-3">Business Valuation in Canada — Court-Ready, Fair, Defensible</h1>
+          <p class="lead lead-tight mb-2">
+            LOW COST • HIGH VALUE — Accurate, powerful valuations for any situation from <strong>$200 Thousand</strong> to <strong>$200 Million</strong>.
+          </p>
+          <p class="mb-0"><strong>Average fee:</strong> $3,500 &nbsp;·&nbsp; <strong>Range:</strong> $1,500 – $15,000</p>
+
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+            <a class="btn btn-primary" href="tel:+18773558004"><i class="bi bi-telephone"></i> Call 877&nbsp;355&nbsp;8004</a>
+            <a class="btn btn-outline-light" href="mailto:pindotca@gmail.com"><i class="bi bi-envelope"></i> Email</a>
+            <a class="btn btn-gradient" href="pages/case_law.html"><i class="bi bi-journal-text"></i> Legal Proof of Value</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Intro / Messaging -->
+      <section class="container my-5">
+        <div class="row align-items-start g-4">
+          <div class="col-lg-8">
+            <div class="bg-light p-4 rounded shadow-sm">
+              <p class="fs-5 mb-3">
+                The more complicated your situation, the better our methodology works to <strong>uplift your position</strong> — backed by <strong>case law going back centuries</strong>.
+              </p>
+              <p class="fs-5 mb-3"><strong>Whatever the purpose</strong>, why would you settle for a lesser valuation?</p>
+              <p class="fs-5 mb-4">We don’t just value numbers — <strong>we defend fairness</strong>.</p>
+
+              <ul class="fs-6 mb-4">
+                <li>Shareholder &amp; Minority Oppression</li>
+                <li>Franchisee Oppression</li>
+                <li>Unfair “Liquidated Damages” Penalties</li>
+              </ul>
+
+              <p class="fs-6 mb-4">
+                If you’re being pressured, sidelined, or penalized, you need a valuation that stands up. Canadian law requires fairness, and our reports are built to be used in negotiations, disputes, and courtrooms.
+              </p>
+
+              <div class="border rounded p-3 bg-white">
+                <div class="text-uppercase small text-muted">WE SOLVE</div>
+                <ul class="row row-cols-1 row-cols-sm-2 g-2 mb-0 mt-2">
+                  <li>Partnership Disputes</li>
+                  <li>Divorce Valuation</li>
+                  <li>Purchase and Sale Values</li>
+                  <li>Share Value</li>
+                  <li>CRA Section 86 Estate Freeze</li>
+                  <li>CRA Section 85 Rollover</li>
+                  <li>Income Valuations – Expropriation</li>
+                  <li>Low-cost Asset Appraisals</li>
+                </ul>
+              </div>
+
+              <div class="text-center mt-4">
+                <p class="mb-1"><strong>Average fee:</strong> $3,500</p>
+                <p class="mb-1"><strong>Range:</strong> $1,500 – $15,000</p>
+                <p class="mb-2">📞 <strong>CALL NOW:</strong> <a href="tel:+18773558004" class="link-dark">877-355-8004</a></p>
+                <p class="mb-2">✉️ <a class="link-dark" href="mailto:pindotca@gmail.com">pindotca@gmail.com</a></p>
+                <p class="fs-5 mb-0"><strong>FREE</strong> ballpark value estimate in our first 15 minutes of conversation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 text-center">
+            <img src="images/Info.png" class="img-fluid rounded shadow-sm" alt="Business valuation process overview with pricing and legal readiness" loading="lazy" width="400" height="300">
+          </div>
+        </div>
+      </section>
+      
+      <!-- Why Us -->
+      <section class="container my-5" id="whyus">
+        <div class="p-4 bg-light border rounded shadow-sm">
+          <h2 class="h4 text-center mb-3">Why Choose Eric Jordan, CPPA</h2>
+          <ul class="mb-0">
+            <li>Canada-wide service with <a href="pages/case_law.html">courtroom-ready, case-law-backed</a> reports.</li>
+            <li>Built for sales, disputes, divorce, and CRA compliance (<a href="pages/business.html">fair market value methodology</a>).</li>
+            <li>Transparent pricing and fast initial estimates.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="container my-5" id="pricing">
+        <div class="p-4 bg-light border rounded shadow-sm">
+          <p class="text-center h5 mb-0">
+            Obtain a professional business valuation in Canada, priced between <strong>$1,500 and $15,000</strong>.
+          </p>
+        </div>
+      </section>
+
+      <!-- 25 Factors -->
+      <section class="container my-5" id="25-factors">
+        <div class="bg-light p-4 rounded shadow-sm">
+          <h2 class="h4 text-center mb-4">Eric Jordan's 25 Factors Affecting Business Valuation</h2>
+          <p>These factors measure intangible and tangible drivers that determine up to <strong>70–90%</strong> of a business’s value. From Eric Jordan’s book, <em>25 Factors Affecting Business Valuation</em>:</p>
+
+          <ol class="row row-cols-1 row-cols-sm-2 g-2 mb-4">
+            <li>Purpose</li>
+            <li>History</li>
+            <li>Financials</li>
+            <li>Return on Investment (ROI)</li>
+            <li>Liquidity</li>
+            <li>Cost of Liquidation</li>
+            <li>Hard Assets</li>
+            <li>Utility, Sustainability, and Scalability</li>
+            <li>Research &amp; Development (R&amp;D)</li>
+            <li>Processes, Procedures, Systems, and Documentation</li>
+            <li>Shareholder Agreement</li>
+            <li>Management Capability &amp; Workforce</li>
+            <li>Client Base</li>
+            <li>Supply Chain</li>
+            <li>Distribution Network</li>
+            <li>Marketing (Advertising, PR, Brand, NFT &amp; Crypto Promotion)</li>
+            <li>Dominance in the market</li>
+            <li>Industry benchmarks (averages)</li>
+            <li>Terms of lease</li>
+            <li>Terms of Sale</li>
+            <li>Minority Interest</li>
+            <li>Special Interest Purchaser</li>
+            <li>Geopolitical considerations</li>
+            <li>Risk</li>
+            <li>Opportunity</li>
+          </ol>
+
+          <p>We also provide <strong>Shariah-compliant</strong> valuations. 
+            <a class="btn btn-gradient ms-1" href="https://www.amazon.com/25-Factors-Affecting-Business-Valuation/dp/1775007405">Buy the Book</a>
+            <a class="btn btn-outline-primary ms-1" href="pages/case_law.html">See Case Law &amp; Method</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- 5 Senses -->
+      <section class="container my-5" id="5-senses">
+        <div class="bg-light p-4 rounded shadow-sm">
+          <h2 class="h4 text-center mb-4">The 5 Senses Inspection Report: Enhancing Valuation Accuracy</h2>
+          <p>Eric Jordan's hands-on method evaluates tangible assets to align with intangibles:</p>
+          <ul class="mb-4">
+            <li><strong>Sight</strong>: Visual check of equipment condition (e.g., wear on machinery).</li>
+            <li><strong>Sound</strong>: Listen for operational issues (e.g., noisy equipment signaling repairs).</li>
+            <li><strong>Smell</strong>: Detect odors indicating maintenance problems (e.g., musty smells in storage).</li>
+            <li><strong>Touch</strong>: Feel for quality (e.g., texture of products).</li>
+            <li><strong>Taste</strong>: Sample for food businesses (e.g., freshness in a restaurant).</li>
+          </ul>
+          <p>Included in your valuation – Call now! Prevents fraud and supports CSBFP loans. Example: A graphic novel collection scored 10/10 for pristine condition.</p>
+        </div>
+      </section>
+
+      <!-- ===== FAQ Section (visible content to match FAQ schema) ===== -->
+      <section class="container my-5" id="faqs">
+        <div class="bg-light p-4 rounded shadow-sm">
+          <h2 class="h4 text-center mb-4">Frequently Asked Questions</h2>
+          <div class="accordion" id="faq">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="q1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">What is the average cost of a business valuation?</button>
+              </h3>
+              <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                <div class="accordion-body">Our average fee is about $3,500, with a typical range of $1,500–$15,000 depending on size, complexity, documents, and deadlines.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="q2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">Are your valuations court-ready?</button>
+              </h3>
+              <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                <div class="accordion-body">Yes. Reports are prepared to be defensible in negotiations and courtrooms, supported by case law and Eric Jordan’s 25 Factors model.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="q3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">Do you handle CRA s.85 and s.86 filings?</button>
+              </h3>
+              <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                <div class="accordion-body">Yes. We routinely complete valuations for CRA s.85 rollovers and s.86 estate freezes, ensuring compliance and fair market value support.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="q4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">Do you provide Shariah-compliant valuations?</button>
+              </h3>
+              <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                <div class="accordion-body">Yes. We deliver fair, transparent, Shariah-compliant valuations aligned with ethical standards and documentation requirements.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ===== Contact moved to the bottom (new format) ===== -->
+  <section id="contact" class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row justify-content-center g-4">
+        <div class="col-md-10 col-lg-8">
+          <div class="p-4 rounded-3 bg-black bg-opacity-25 border border-light">
+            <h2 class="h4 text-center mb-3">Contact Eric Jordan, CPPA</h2>
+            <p class="text-center mb-1">Toll-free and available 24/7 · Canada-wide</p>
+            <div class="d-flex flex-wrap justify-content-center gap-2 my-3">
+              <a class="btn btn-light" href="tel:+18773558004"><i class="bi bi-telephone"></i> 877&nbsp;355&nbsp;8004</a>
+              <a class="btn btn-outline-light" href="mailto:eric@pin.ca"><i class="bi bi-envelope"></i> eric@pin.ca</a>
+              <a class="btn btn-outline-light" href="mailto:pindotca@gmail.com"><i class="bi bi-envelope"></i> pindotca@gmail.com</a>
+            </div>
+            <p class="text-center mb-0">Prefer a full page? Visit the <a class="link-light" href="/pages/contact.html">Contact Page</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    © PIN Valuations
+  </footer>
+
+  <!-- ===== Structured Data: FAQPage (JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the average cost of a business valuation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our average fee is about $3,500, with a typical range of $1,500–$15,000 depending on size, complexity, documents, and deadlines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your valuations court-ready?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Reports are prepared to be defensible in negotiations and courtrooms, supported by case law and Eric Jordan’s 25 Factors model."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you cover CRA Section 85 rollovers and Section 86 estate freezes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We routinely complete valuations for CRA s.85 rollovers and s.86 estate freezes, ensuring compliance and fair market value support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you provide Shariah-compliant valuations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We provide fair, transparent, Shariah-compliant valuations aligned with ethical requirements and documentation standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What situations do you help with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Shareholder and minority oppression, franchisee oppression, unfair liquidated damages, partnership and divorce disputes, purchase and sale, expropriation, and more."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script defer>
+    (function () {
+      const burger = document.getElementById('burger');
+      const overlay = document.getElementById('overlay');
+      const navLinks = document.getElementById('navLinks');
+      const sidebar = document.getElementById('sidebar');
+
+      function openMenu() {
+        document.body.classList.add('menu-open');
+        burger?.setAttribute('aria-expanded', 'true');
+        sidebar?.removeAttribute('aria-hidden');
+        if (overlay) overlay.hidden = false;
+      }
+      function closeMenu() {
+        document.body.classList.remove('menu-open');
+        burger?.setAttribute('aria-expanded', 'false');
+        sidebar?.setAttribute('aria-hidden', 'true');
+        if (overlay) overlay.hidden = true;
+      }
+      function toggleMenu() {
+        (document.body.classList.contains('menu-open') ? closeMenu : openMenu)();
+      }
+
+      burger?.addEventListener('click', toggleMenu);
+      overlay?.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+      // Initial state: always closed (desktop & mobile)
+      closeMenu();
+      const mq = window.matchMedia('(max-width: 900px)');
+
+      // ---------- Smart nav clicks ----------
+      navLinks?.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+        const rawHref = (link.getAttribute('href') || '').trim();
+        if (rawHref === '' || rawHref === '#') { e.preventDefault(); return; }
+
+        const url = new URL(rawHref, location.origin);
+
+        // In-page anchor on current page -> smooth scroll
+        if (url.hash && (url.pathname === location.pathname)) {
+          const target = document.querySelector(url.hash);
+          if (target) {
+            e.preventDefault();
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+            if (mq.matches) closeMenu();
+          }
+          return;
+        }
+
+        // Navigations to /pages/...
+        const pagesRe = /^\/?pages\//i;
+        if (pagesRe.test(rawHref) || pagesRe.test(url.pathname.slice(1))) {
+          if (mq.matches) closeMenu();
+          return;
+        }
+      });
+
+      // ----- Active link highlighter -----
+      const anchorMap = {
+        '#home': document.querySelector('a[href="#home"]'),
+        '#whyus': document.querySelector('a[href="#whyus"]'),
+        '#pricing': document.querySelector('a[href="#pricing"]'),
+        '#contact': document.querySelector('a[href="#contact"]'),
+        '#25-factors': document.querySelector('a[href="#25-factors"]'),
+        '#5-senses': document.querySelector('a[href="#5-senses"]'),
+        '#faqs': document.querySelector('a[href="#faqs"]')
+      };
+
+      const sections = Object.keys(anchorMap)
+        .map(sel => document.querySelector(sel))
+        .filter(Boolean);
+
+      function setActive(href) {
+        navLinks?.querySelectorAll('a').forEach(a => {
+          a.classList.remove('active');
+          a.removeAttribute('aria-current');
+        });
+        const a = anchorMap[href];
+        if (a) {
+          a.classList.add('active');
+          a.setAttribute('aria-current', 'page');
+        }
+      }
+
+      if (location.hash && anchorMap[location.hash]) setActive(location.hash);
+
+      if ('IntersectionObserver' in window && sections.length) {
+        const io = new IntersectionObserver((entries) => {
+          let top = null, ratio = 0;
+          entries.forEach(en => {
+            if (en.isIntersecting && en.intersectionRatio > ratio) {
+              ratio = en.intersectionRatio;
+              top = en.target;
+            }
+          });
+          if (top && top.id) setActive('#' + top.id);
+        }, {
+          root: null,
+          threshold: [0.3, 0.6, 0.9],
+          rootMargin: '0px 0px -40% 0px'
+        });
+        sections.forEach(sec => io.observe(sec));
+      }
+    })();
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BFVYDEZ13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-1BFVYDEZ13');
+  </script>
+</body>
+</html>

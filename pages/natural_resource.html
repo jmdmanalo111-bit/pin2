@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canada’s Natural Resources & Cultural Legacy — PIN Valuations</title>
+  <meta name="description" content="Uranium, oil, natural gas, rare earths, lithium, fisheries, forestry, agriculture — and the cultural stories that connect communities, music, sport, and renewable energy leadership."/>
+  <link rel="canonical" href="https://pin.ca/pages/natural_resource.html"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons for sidebar/menu icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Shared site styles copied from index style system (same as podcast) -->
+  <style>
+    :root{
+      --bg:#0b1020;            /* page chrome */
+      --ink:#0f172a;           /* body text */
+      --muted:#475569;         /* secondary text */
+      --brand:#2447f9;         /* accent */
+      --paper:#ffffff;         /* cards */
+      --edge:#e2e8f0;          /* borders */
+      --chip:#f1f5f9;          /* subtle fills */
+      --success:#16a34a;
+      --shell:#0f172a;         /* topbar/sidebar bg */
+      --shell-edge:#1f2937;    /* shell borders */
+      --sidebar-w: 260px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--ink); line-height:1.6}
+
+    /* Top bar */
+    .topbar{position:sticky; top:0; z-index:1000; display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--shell); color:#e5e7eb; border-bottom:1px solid var(--shell-edge)}
+    .topbar-title{font-weight:700; letter-spacing:.01em}
+    .burger{display:inline-flex; flex-direction:column; gap:4px; width:36px; height:28px; align-items:center; justify-content:center; background:transparent; color:#e5e7eb; border:1px solid var(--shell-edge); border-radius:8px; cursor:pointer}
+    .burger-bar{width:18px; height:2px; background:#e5e7eb; display:block}
+
+    /* Shell layout */
+    .app{display:grid; grid-template-columns:var(--sidebar-w) 1fr; min-height:100vh}
+    .sidebar{background:var(--shell); color:#e5e7eb; border-right:1px solid var(--shell-edge); padding:16px; position:sticky; top:54px; height:calc(100vh - 54px); overflow-y:auto}
+    .logo img{max-width:160px; height:auto; display:block}
+    .menu-heading{margin:16px 0 8px; font-size:14px; color:#9aa4b2; text-transform:uppercase; letter-spacing:.08em}
+    .menu .menu-label{margin-top:16px; color:#9aa4b2; font-size:12px; text-transform:uppercase; letter-spacing:.08em}
+    #navLinks{list-style:none; padding:0; margin:0}
+    #navLinks li a{display:flex; align-items:center; gap:10px; padding:10px 8px; border-radius:10px; color:#e5e7eb; text-decoration:none}
+    #navLinks li a:hover{background:rgba(255,255,255,.06)}
+    #navLinks a.active{background:rgba(255,255,255,.1)}
+    .content{overflow:hidden}
+
+    /* Mobile sidebar: slide-down below topbar */
+    @media (max-width: 960px){
+      .app{grid-template-columns:1fr}
+      .sidebar{position:fixed; top:54px; left:0; right:0; height:auto; max-height:70vh; transform:translateY(-110%); transition:transform .25s ease; border-right:0; border-bottom:1px solid var(--shell-edge)}
+      .sidebar.open{transform:translateY(0)}
+    }
+
+    /* Page design helpers (cards, hero, chips, grids) */
+    .wrap{max-width:1100px; margin:0 auto; padding:24px}
+    header.hero{background:linear-gradient(180deg, #0b1020 0%, #11183a 100%); color:#eef2ff; padding:56px 24px 28px; position:relative; overflow:hidden}
+    header.hero .wrap{position:relative; z-index:2}
+    .brand{display:flex; align-items:center; gap:12px; margin-bottom:20px}
+    .brand .logo2{width:42px; height:42px; display:grid; place-items:center; border-radius:10px; background:#1f2a6b; box-shadow:inset 0 0 0 1px #3647a0, 0 10px 20px rgba(0,0,0,.2)}
+    .brand .logo2 svg{width:24px; height:24px; fill:#a5b4fc}
+    h1.title{margin:0 0 8px; font-weight:800; font-size:clamp(28px, 3.4vw, 42px); letter-spacing:.2px}
+    p.subtitle{margin:0; color:#c7d2fe; max-width:62ch}
+    nav.top{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .chip{background:rgba(255,255,255,.08); color:#e0e7ff; border:1px solid rgba(255,255,255,.18); padding:8px 12px; border-radius:999px; font-size:14px; text-decoration:none}
+    .chip:hover{background:rgba(255,255,255,.14)}
+
+    section{padding:38px 24px}
+    .card{background:var(--paper); border:1px solid var(--edge); border-radius:16px; padding:28px; box-shadow:0 10px 30px rgba(2,6,23,.06)}
+    h2{margin:0 0 12px; font-size:28px; letter-spacing:.2px}
+    h3{margin:10px 0 8px; font-size:18px}
+    p{margin:10px 0}
+    .muted{color:var(--muted)}
+    .lead{font-size:18px}
+
+    .grid{display:grid; gap:16px; grid-template-columns:1fr}
+    @media (min-width:900px){.grid{grid-template-columns:1fr 1fr; gap:20px}}
+
+    .two-col{display:grid; grid-template-columns:1fr; gap:12px}
+    @media (min-width:720px){.two-col{grid-template-columns:1fr 1fr}}
+
+    .badge{display:inline-block; padding:2px 8px; border:1px solid var(--edge); border-radius:999px; font-size:12px; color:#334155; background:var(--chip)}
+    .list{margin:0; padding-left:18px}
+
+    footer{padding:40px 24px 64px; color:#e2e8f0}
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar" role="banner">
+    <button id="burger" class="burger" aria-label="Toggle menu" aria-controls="sidebar" aria-expanded="false">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+    <div class="topbar-title">PIN Valuations</div>
+  </header>
+
+  <div class="app">
+    <!-- Sidebar (same structure as podcast/index) -->
+    <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary">
+      <div class="logo">
+        <a href="/#home" aria-label="Home">
+          <img src="images/logo.png" alt="PIN Valuations logo" />
+        </a>
+      </div>
+
+      <nav class="menu">
+        <h2 class="menu-heading">Dashboard</h2>
+        <ul id="navLinks">
+          <li>
+            <a href="../index.html#home"><i class="bi bi-house-door" aria-hidden="true"></i><span>Home</span></a>
+          </li>
+          <li>
+            <a href="../index.html#whyus"><i class="bi bi-stars" aria-hidden="true"></i><span>Why Choose Us</span></a>
+          </li>
+          <li>
+            <a href="../index.html#pricing"><i class="bi bi-cash-stack" aria-hidden="true"></i><span>Pricing</span></a>
+          </li>
+          <li>
+            <a href="contact.html"><i class="bi bi-envelope" aria-hidden="true"></i><span>Contact</span></a>
+          </li>
+
+          <li class="menu-label" aria-hidden="true">Learn More</li>
+          <li><a href="business.html">Business Valuation Methodology</a></li>
+          <li><a href="comparison.html">Comparison to Other Valuation Methods</a></li>
+          <li><a href="history.html">Platform History</a></li>
+          <li><a href="methodology.html">Where Our Methodology is Entrenched in Law</a></li>
+          <li><a href="industry.html">Business Valuation by Industry</a></li>
+          <li><a href="intangible.html">Intangible Asset Percentage – “Secret Chart”</a></li>
+          <li><a href="family_wealth.html">Experience – Your Family’s Wealth is a Sacred Trust</a></li>
+          <li><a href="sell_business.html">How to Sell Your Business</a></li>
+          <li><a href="expropriation.html">Business Valuation for Expropriation</a></li>
+          <li><a href="fraud_and_flaws.html">Valuation Fraud and Flaws to Avoid</a></li>
+          <li><a href="assets_valuation.html">Debt Restructuring and Asset Valuation</a></li>
+          <li><a href="faqs.html">FAQs – Top 44 Questions &amp; Answers</a></li>
+          <li><a class="active" href="natural_resource.html">Canada’s Natural Resources &amp; Intangibles</a></li>
+          <li><a href="podcast.html">Podcast / News / Geopolitical Notes</a></li>
+          <li><a href="contact.html">Contact (Page)</a></li>
+        </ul>
+      </nav>
+
+      <div class="extra" aria-hidden="true">…</div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content" id="main" tabindex="-1">
+      <!-- Hero -->
+      <header class="hero">
+        <div class="wrap">
+          <div class="brand">
+            <div class="logo2" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" aria-label="Resources"><path d="M4 3h8l4 4v14H4zM14 3v4h4"/></svg>
+            </div>
+            <div class="badge">PIN Valuations • Natural Resources</div>
+          </div>
+          <h1 class="title">Canada’s Natural Resources: The Backbone of the Economy</h1>
+          <p class="subtitle">From energy and critical minerals to fisheries, forestry, agriculture, and a rich cultural legacy — how resources connect to communities and valuation.</p>
+          <nav class="top" aria-label="Quick links">
+            <a class="chip" href="#energy">Energy & Critical Minerals</a>
+            <a class="chip" href="#fishing">Fishing</a>
+            <a class="chip" href="#renewable">Forestry & Agriculture</a>
+            <a class="chip" href="#culture">Cultural Legacy</a>
+            <a class="chip" href="#clean">Renewable Energy</a>
+            <a class="chip" href="#conclusion">Conclusion</a>
+          </nav>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <!-- Energy & Critical Minerals -->
+        <section id="energy" aria-labelledby="sec-energy-h">
+          <div class="card">
+            <h2 id="sec-energy-h">Energy & Critical Minerals</h2>
+            <p class="muted">Uranium, oil, natural gas, rare earths, and lithium exploration.</p>
+
+            <div class="card" style="margin-top:12px">
+              <div class="badge">1. Uranium</div>
+              <h3>Powering the World</h3>
+              <p><strong>Key Region:</strong> Athabasca Basin, Saskatchewan (Saskatoon and La Ronge).</p>
+              <p><strong>Details:</strong> Home to <em>15% of the world’s uranium resources</em>, Canada’s high‑grade deposits are among the best globally.</p>
+              <p><strong>Why It Matters:</strong> Saskatchewan’s uranium fuels nuclear energy projects worldwide, highlighting innovation in sustainable power.</p>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+              <div class="badge">2. Oil</div>
+              <h3>The Lifeblood of Alberta</h3>
+              <p><strong>Key Region:</strong> Alberta’s oil sands (Fort McMurray and Cold Lake).</p>
+              <p><strong>Details:</strong> Canada holds <em>~10% of global oil reserves</em>, with advanced techniques making extraction more efficient and sustainable.</p>
+              <p><strong>Why It Matters:</strong> Alberta’s energy sector drives growth and supports entire communities with opportunity and jobs.</p>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+              <div class="badge">3. Natural Gas</div>
+              <h3>A Reliable Export</h3>
+              <p><strong>Key Regions:</strong> Grande Prairie, Alberta, and Fort St. John, British Columbia.</p>
+              <p><strong>Details:</strong> Canada contributes <em>~4% of global natural gas production</em>, providing a cleaner, reliable energy source.</p>
+              <p><strong>Why It Matters:</strong> Extensive pipelines link to major markets — keeping homes warm and industries running.</p>
+            </div>
+
+            <div class="two-col" style="margin-top:12px">
+              <div class="card">
+                <div class="badge">4. Rare Earth Elements</div>
+                <h3>Building the Clean Tech Supply Chain</h3>
+                <p><strong>Key Region:</strong> Saskatoon, Saskatchewan.</p>
+                <p><strong>Details:</strong> The Saskatchewan Research Council (SRC) operates North America’s first rare earth processing facility, positioning Canada as a leader in sustainable mining solutions.</p>
+              </div>
+              <div class="card">
+                <div class="badge">5. Lithium</div>
+                <h3>Fueling the EV Transition</h3>
+                <p><strong>Key Region:</strong> Snow Lake, Manitoba.</p>
+                <p><strong>Details:</strong> Canada’s lithium resources contribute to North America’s EV supply chain, strengthening green‑energy solutions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fishing -->
+        <section id="fishing" aria-labelledby="sec-fish-h">
+          <div class="card">
+            <h2 id="sec-fish-h">Fishing: Canada’s Coastal Lifeline</h2>
+            <p class="muted">An industry spanning the Atlantic, Pacific, and Arctic coasts.</p>
+
+            <div class="two-col" style="margin-top:12px">
+              <div class="card">
+                <h3>Industry Overview</h3>
+                <ul class="list">
+                  <li>One of the world’s most significant fishing industries.</li>
+                  <li>From lobster in Nova Scotia to salmon in British Columbia, fishing is central to the economy and way of life.</li>
+                </ul>
+                <h3>Coastal Strengths</h3>
+                <ul class="list">
+                  <li><strong>Atlantic:</strong> Lobster, crab, shrimp, and scallop exports — supporting coastal communities and trade.</li>
+                  <li><strong>Pacific:</strong> Wild salmon and halibut — leadership in sustainable practices.</li>
+                  <li><strong>Arctic:</strong> Emerging industries (e.g., char) balancing opportunity with ecological stewardship.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Economic Impact</h3>
+                <ul class="list">
+                  <li>~$6 billion in annual economic activity.</li>
+                  <li>~72,000 jobs supported nationwide.</li>
+                  <li>Exports to 130+ countries, including the U.S., China, and Europe.</li>
+                </ul>
+                <h3>Cultural Significance</h3>
+                <p>Indigenous communities have fished sustainably for millennia, blending traditional knowledge with modern science. Coastal towns thrive on fishing, with identities tied to the sea.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Forestry & Agriculture -->
+        <section id="renewable" aria-labelledby="sec-renew-h">
+          <div class="card">
+            <h2 id="sec-renew-h">Forestry & Agriculture: Renewable Resources</h2>
+            <p class="muted">Canada’s green heart and global pantry.</p>
+
+            <div class="two-col" style="margin-top:12px">
+              <div class="card">
+                <div class="badge">Forestry</div>
+                <h3>Canada’s Green Heart</h3>
+                <p><strong>Key Regions:</strong> Prince George, BC; Thunder Bay, ON.</p>
+                <p><strong>Details:</strong> Managing ~9% of the world’s forests, Canada leads in sustainable softwood lumber, pulp, and paper exports.</p>
+              </div>
+              <div class="card">
+                <div class="badge">Agriculture</div>
+                <h3>Feeding the World</h3>
+                <ul class="list">
+                  <li><strong>Wheat:</strong> A top global exporter — especially durum for pasta.</li>
+                  <li><strong>Canola:</strong> World’s largest producer of canola oil for cooking and biofuels.</li>
+                  <li><strong>Maple Syrup:</strong> Quebec produces ~71% of global supply.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cultural Legacy -->
+        <section id="culture" aria-labelledby="sec-culture-h">
+          <div class="card">
+            <h2 id="sec-culture-h">Canada’s Cultural Legacy</h2>
+            <p class="muted">Music, sport, and resource communities.</p>
+
+            <div class="grid" style="margin-top:12px">
+              <div class="card">
+                <div class="badge">Music</div>
+                <h3>Stompin’ Tom Connors</h3>
+                <ul class="list">
+                  <li><em>Tillsonburg</em>: Ode to tobacco farmers — labour and community in rural Ontario.</li>
+                  <li><em>Bud the Spud</em>: Celebrates trucking culture connecting the provinces.</li>
+                  <li><em>Big Joe Mufferaw</em>: Folklore of an Ottawa Valley logger.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <div class="badge">Music</div>
+                <h3>Rita MacNeil</h3>
+                <p><em>Working Man</em>: A tribute to the coal miners of Cape Breton — strength and resilience.</p>
+              </div>
+              <div class="card">
+                <div class="badge">Music</div>
+                <h3>The Rankin Family</h3>
+                <p><em>The Fisherman’s Son</em>: Generational legacy and challenges of Maritime fisheries.</p>
+              </div>
+              <div class="card">
+                <div class="badge">Hockey</div>
+                <h3>Trail Smoke Eaters</h3>
+                <p>From Trail, British Columbia — their name reflects the town’s smelting heritage. International legends, winning World Championships in <strong>1939</strong> and <strong>1961</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Renewable Energy -->
+        <section id="clean" aria-labelledby="sec-clean-h">
+          <div class="card">
+            <h2 id="sec-clean-h">Renewable Energy Leadership</h2>
+            <p class="muted">Hydro, wind, and solar shaping a cleaner future.</p>
+
+            <div class="two-col" style="margin-top:12px">
+              <div class="card">
+                <div class="badge">Hydropower</div>
+                <h3>Canada’s Energy Anchor</h3>
+                <ul class="list">
+                  <li>~60% of electricity generated from hydro.</li>
+                  <li>~9% contribution to global hydroelectric power.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <div class="badge">Wind & Solar</div>
+                <h3>The Future Is Here</h3>
+                <p>Growing wind and solar sectors support Canada’s leadership in renewable innovation and grid reliability.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" aria-labelledby="sec-conclusion-h">
+          <div class="card">
+            <h2 id="sec-conclusion-h">Conclusion: Canada’s Resourceful Spirit</h2>
+            <p class="muted">Economic strength and cultural heritage go hand in hand.</p>
+            <p>Canada’s wealth lies not only in its resources but in the stories of its people. From the songs of Stompin’ Tom Connors and Rita MacNeil to the hockey triumphs of the Trail Smoke Eaters, these narratives embody the resilience and pride of Canadian communities. Together, natural and cultural resources cement Canada’s place as a global leader.</p>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <div class="wrap"><p class="muted">© <span id="year"></span> Canada — Natural Resources & Culture</p></div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Burger toggle (same behavior as podcast/index)
+    const burger = document.getElementById('burger');
+    const sidebar = document.getElementById('sidebar');
+    if (burger && sidebar) {
+      burger.addEventListener('click', () => {
+        const open = sidebar.classList.toggle('open');
+        burger.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // Highlight current nav item
+    (function(){
+      const a = document.querySelector('#navLinks a[href$="natural_resource.html"]');
+      if (a) a.classList.add('active');
+    })();
+
+    // Smooth scroll for hero quick links
+    document.querySelector('.top')?.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  </script>
+</body>
+</html>

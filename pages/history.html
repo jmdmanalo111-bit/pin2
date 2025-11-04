@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Platform History — PIN Valuations</title>
+  <link rel="canonical" href="https://pin.ca/pages/history.html">
+  <link rel="alternate" hreflang="x-default" href="https://pin.ca/pages/history.html">
+  <link rel="alternate" hreflang="en-CA" href="https://pin.ca/pages/history.html">
+  <meta name="description" content="27+ years online helping Canadian business buyers and sellers — from early listings to a modern lender-accepted valuation platform.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+  <style>
+    :root{
+      --bg:#0b1020;--ink:#0f172a;--muted:#475569;--brand:#2447f9;
+      --paper:#ffffff;--edge:#e2e8f0;--chip:#f1f5f9;--success:#16a34a;
+      --shell:#0f172a;--shell-edge:#1f2937;
+      --sidebar-w:260px;
+      --transition:240ms ease;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);color:var(--ink);line-height:1.6
+    }
+    a{color:var(--brand)} a:hover{text-decoration:underline}
+    [id]{scroll-margin-top:72px}
+
+    /* Topbar */
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;gap:12px;height:56px;padding:0 12px;background:linear-gradient(180deg,#0b1020 0%,#11183a 100%);color:#e5e7eb;border-bottom:1px solid rgba(148,163,184,.25);box-shadow:0 6px 18px rgba(2,6,23,.35)}
+    .topbar-title{font-weight:800;letter-spacing:.2px}
+
+    /* Burger */
+    .burger{
+      width:44px;height:36px;display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+      border:1px solid var(--shell-edge);border-radius:8px;background:transparent;color:#e5e7eb;cursor:pointer;padding:0 8px;
+    }
+    .burger:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
+    .burger-bar{height:2px;width:22px;margin:0 auto;background:currentColor;transition:transform var(--transition),opacity var(--transition)}
+    body.menu-open .burger-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    body.menu-open .burger-bar:nth-child(2){opacity:0}
+    body.menu-open .burger-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* Layout */
+    .app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;margin-top:56px}
+    .content{overflow:hidden}
+
+    /* Sidebar */
+    .sidebar{
+      background:var(--paper);color:#0f172a;border-right:1px solid var(--edge);padding:16px;
+      position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;box-shadow:4px 0 24px rgba(2,6,23,.08);z-index:1002
+    }
+    .menu-heading{margin:16px 0 8px;font-size:14px;color:#64748b;text-transform:uppercase;letter-spacing:.08em}
+    .menu-label{margin-top:16px;color:#9aa4b2;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .navlinks{list-style:none;padding:0;margin:0}
+    .navlinks li+li{margin-top:8px}
+    .navlinks a{
+      display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:10px;color:#0f172a;text-decoration:none;border:1px solid transparent;
+      transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease
+    }
+    .navlinks a:hover{background:var(--chip);border-color:var(--edge)}
+    .navlinks a.active{background:linear-gradient(90deg,#eef2ff 0%,#ffffff 60%);color:#1d4ed8;border-color:#c7d2fe;box-shadow:0 4px 12px rgba(37,99,235,.12) inset}
+
+    /* Collapse on desktop when closed */
+    body:not(.menu-open) .sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
+    body:not(.menu-open) .app{grid-template-columns:0 1fr}
+
+    /* Mobile drawer */
+    @media (max-width:960px){
+      .app{grid-template-columns:1fr}
+      .sidebar{position:fixed;top:56px;left:0;bottom:0;width:min(86vw,320px);height:auto;max-height:none;transform:translateX(-100%);transition:transform .25s ease;box-shadow:0 12px 30px rgba(2,6,23,.30)}
+      body.menu-open .sidebar{transform:translateX(0)}
+    }
+    .backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;transition:opacity .2s ease;z-index:1001;pointer-events:none}
+    .backdrop.show{opacity:1;pointer-events:auto}
+
+    /* Hero */
+    header.hero{background:linear-gradient(180deg,#0b1020 0%,#11183a 100%);color:#eef2ff;padding:56px 0 28px;position:relative;overflow:hidden}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    h1.title{margin:0 0 8px;font-weight:800;font-size:clamp(28px,3.4vw,42px);letter-spacing:.2px}
+    p.subtitle{margin:0;color:#c7d2fe;max-width:62ch}
+    .chiprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .chip{background:rgba(255,255,255,.08);color:#e0e7ff;border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:999px;font-size:14px;text-decoration:none}
+    .chip:hover{background:rgba(255,255,255,.14)}
+
+    /* Cards & sections */
+    section{padding:38px 24px}
+    .card{background:var(--paper);border:1px solid var(--edge);border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,.06)}
+    h2{margin:0 0 12px;font-size:28px;letter-spacing:.2px}
+    h3{margin:24px 0 8px;font-size:20px}
+    p{margin:10px 0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:22px}
+    @media (min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    @media (min-width:1100px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .metric{background:var(--chip);border:1px solid var(--edge);border-radius:12px;padding:16px;text-align:center}
+    .metric .num{font-weight:800;font-size:28px;color:#1f2937}
+    .metric .cap{color:var(--muted);font-size:14px}
+    .mini{border:1px dashed var(--edge);background:#fff;border-radius:12px;padding:14px}
+
+    /* Timeline */
+    .timeline{position:relative;margin:6px 0 0;padding-left:28px}
+    .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--edge)}
+    .tl-item{position:relative;margin:18px 0;padding-left:16px}
+    .tl-item::before{content:"";position:absolute;left:-2px;top:8px;width:12px;height:12px;border-radius:999px;background:#1d4ed8;border:2px solid #fff;box-shadow:0 0 0 2px #c7d2fe}
+    .tl-year{font-weight:800;color:#1d4ed8}
+    .tl-card{margin-top:8px;background:var(--chip);border:1px solid var(--edge);border-radius:12px;padding:12px}
+
+    /* Footer */
+    .site-footer{background:#26292d;color:#f0f0f0;text-align:center;padding:15px 0;font-size:14px;letter-spacing:.3px}
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="topbar" role="banner">
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-controls="sidebar" aria-expanded="false">
+      <span class="burger-bar"></span><span class="burger-bar"></span><span class="burger-bar"></span>
+    </button>
+    <div class="topbar-title">PIN Valuations</div>
+  </div>
+
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar" role="navigation" aria-label="Primary">
+      <nav class="menu">
+        <h2 class="menu-heading">Dashboard</h2>
+        <ul class="navlinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="business.html">Business Valuation Methodology</a></li>
+          <li><a href="comparison.html">Comparison to Other Valuation Methods</a></li>
+          <li><a href="history.html">Platform History</a></li>
+          <li><a href="methodology.html">Where Our Methodology is Entrenched in Law</a></li>
+          <li><a href="industry.html">Business Valuation by Industry</a></li>
+          <li><a href="intangible.html">Intangible Asset Percentage — “Secret Chart”</a></li>
+          <li><a href="family_wealth.html">Experience — Your Family’s Wealth is a Sacred Trust</a></li>
+          <li><a href="sell_business.html">How to Sell Your Business</a></li>
+          <li><a href="expropriation.html">Business Valuation for Expropriation</a></li>
+          <li><a href="fraud_and_flaws.html">Valuation Fraud and Flaws to Avoid</a></li>
+          <li><a href="assets_valuation.html">Debt Restructuring and Asset Valuation</a></li>
+          <li><a href="case_law.html">Case Law &amp; 25 Factors</a></li>
+          <li><a href="faqs.html">FAQs — Top 44 Questions &amp; Answers</a></li>
+          <li><a href="natural_resource.html">Canada’s Natural Resources &amp; Intangibles</a></li>
+          <li><a href="podcast.html">Podcast / News / Geopolitical Notes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="menu-label" aria-hidden="true">Learn More</li>
+          <li><a href="business.html#factors">25 Factors (Index)</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Backdrop for mobile -->
+    <div id="backdrop" class="backdrop" hidden></div>
+
+    <!-- Main content -->
+    <main class="content" id="main" tabindex="-1">
+      <!-- Hero -->
+      <header class="hero">
+        <div class="wrap">
+          <h1 class="title">Platform History</h1>
+          <p class="subtitle">27+ years online helping Canadian business buyers and sellers — and evolving into a lender‑accepted, modern valuation platform.</p>
+          <div class="chiprow" aria-label="Quick links">
+            <a class="chip" href="#by-the-numbers">By the Numbers</a>
+            <a class="chip" href="#timeline">Timeline</a>
+            <a class="chip" href="#evolution">How the Platform Evolved</a>
+            <a class="chip" href="#examples">Case Snapshots</a>
+            <a class="chip" href="#today">Today &amp; Next</a>
+            <a class="chip" href="#faq">FAQ</a>
+          </div>
+        </div>
+      </header>
+
+      <section id="by-the-numbers">
+        <div class="wrap">
+          <div class="card">
+            <h2>By the Numbers</h2>
+            <p class="muted">Indicative metrics based on platform history; replace placeholders with exact internal counts.</p>
+            <div class="grid cols-3">
+              <div class="metric"><div class="num">1998</div><div class="cap">Launch year</div></div>
+              <div class="metric"><div class="num">27+ years</div><div class="cap">Serving buyers & sellers</div></div>
+              <div class="metric"><div class="num">3</div><div class="cap">Major site redesigns</div></div>
+            </div>
+            <div class="grid cols-3" style="margin-top:16px">
+              <div class="metric"><div class="num">25</div><div class="cap">Intangible factors formalized</div></div>
+              <div class="metric"><div class="num">5</div><div class="cap">Senses inspection framework</div></div>
+              <div class="metric"><div class="num">FMV</div><div class="cap">Aligned to Fair Market Value</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <div class="wrap">
+          <div class="card">
+            <h2>Milestone Timeline</h2>
+            <div class="timeline" role="list">
+              <div class="tl-item" role="listitem">
+                <div class="tl-year">1998</div>
+                <div class="tl-card"><strong>PIN.ca launches</strong> as an online hub for Canadian business buyers and sellers; early listing network established.</div>
+              </div>
+              <div class="tl-item" role="listitem">
+                <div class="tl-year">2005–2012</div>
+                <div class="tl-card">Growth in national listings and audience; initial analytics to understand buyer/seller behaviour and inquiry quality.</div>
+              </div>
+              <div class="tl-item" role="listitem">
+                <div class="tl-year">2015–2019</div>
+                <div class="tl-card">Structured valuation content introduced; groundwork for the <em>25 Factors</em> and the <em>5 Senses Inspection Report</em>.</div>
+              </div>
+              <div class="tl-item" role="listitem">
+                <div class="tl-year">2020–2023</div>
+                <div class="tl-card">Modern cards-and-panels UI; clearer navigation and accessibility; lender-facing reporting strengthened.</div>
+              </div>
+              <div class="tl-item" role="listitem">
+                <div class="tl-year">2024–2025</div>
+                <div class="tl-card">Unified design across <strong>Methodology</strong> and <strong>Comparison</strong> pages; continued collaboration with lenders and counsel on FMV-aligned reporting.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="evolution">
+        <div class="wrap">
+          <div class="card">
+            <h2>How the Platform Evolved</h2>
+            <div class="grid cols-2">
+              <div class="mini">
+                <h3>From Listings to Valuation Storytelling</h3>
+                <ul>
+                  <li>Early years: efficient listings and buyer–seller matching.</li>
+                  <li>Today: structured narratives that explain <em>why</em> a business is valuable.</li>
+                  <li>Integration with the <strong>25 Factors</strong> and inspection notes to support FMV.</li>
+                </ul>
+              </div>
+              <div class="mini">
+                <h3>From Static Pages to Structured Reports</h3>
+                <ul>
+                  <li>Clean cards, tables, and checklists for faster comprehension.</li>
+                  <li>Consistent components across pages to reduce cognitive load.</li>
+                  <li>Shareable URLs suited for lenders and legal review.</li>
+                </ul>
+              </div>
+              <div class="mini">
+                <h3>Trust &amp; Compliance</h3>
+                <ul>
+                  <li>Clear FMV alignment; plain-language explanations of methods.</li>
+                  <li>Inspection detail supports fraud prevention and verification.</li>
+                  <li>Accessible, mobile-first, and SEO-ready content structure.</li>
+                </ul>
+              </div>
+              <div class="mini">
+                <h3>Design System</h3>
+                <ul>
+                  <li>Unified topbar + hero; card and table styles.</li>
+                  <li>Readable typography; subtle shadows and edges.</li>
+                  <li>Dark footer bar for consistent branding.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="examples">
+        <div class="wrap">
+          <div class="card">
+            <h2>Case Snapshots (Illustrative)</h2>
+            <p class="muted">Short anonymized examples to show how the methodology informs outcomes.</p>
+            <div class="grid cols-3">
+              <div class="mini">
+                <h3>Manufacturing (SK)</h3>
+                <p>Applied 25 factors; normalized owner comp; separated equipment value from process IP. Result: clearer FMV basis for financing.</p>
+              </div>
+              <div class="mini">
+                <h3>Hospitality (BC)</h3>
+                <p>5 Senses inspection validated condition; improvements documented; intangible brand position scored. Reduced lender questions.</p>
+              </div>
+              <div class="mini">
+                <h3>Services (ON)</h3>
+                <p>Dominance-in-market and client-base stability drove valuation; risk/opportunity noted with staffing pipeline plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="today">
+        <div class="wrap">
+          <div class="card">
+            <h2>Today &amp; What’s Next</h2>
+            <ul>
+              <li>Continue refining factors scoring and presentation clarity.</li>
+              <li>Expand examples library and guidance for industry-specific nuances.</li>
+              <li>Improve lender/counsel handoff with concise summaries and appendices.</li>
+            </ul>
+            <p><a class="chip" href="business.html">See the Methodology</a> • <a class="chip" href="comparison.html">Compare Methods</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="wrap">
+          <div class="card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="grid">
+              <div class="mini"><h3>What does “Fair Market Value” alignment mean?</h3><p>Reports are structured to the FMV standard, with normalized financials and transparent treatment of both tangible and intangible assets.</p></div>
+              <div class="mini"><h3>How are intangible assets assessed?</h3><p>Using the 25 Factors framework (e.g., purpose, financials, liquidity, dominance in market) with supporting evidence and inspection notes.</p></div>
+              <div class="mini"><h3>Where does the inspection fit?</h3><p>The 5 Senses Inspection validates the real-world condition and presentation of assets — an anti-fraud and confidence measure.</p></div>
+              <div class="mini"><h3>Will lenders accept the materials?</h3><p>Materials are designed to be clear for lenders and legal counsel. Provide your lender’s checklist and we’ll map items directly.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">© <span id="yr"></span> PIN Valuations</footer>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Burger behavior
+    (function(){
+      const burger   = document.getElementById('burger');
+      const sidebar  = document.getElementById('sidebar');
+      const backdrop = document.getElementById('backdrop');
+      const links    = document.querySelectorAll('.navlinks a');
+      const mq       = window.matchMedia('(max-width: 960px)');
+      let lastFocus;
+
+      function openMenu(){
+        document.body.classList.add('menu-open');
+        burger.setAttribute('aria-expanded','true');
+        if(backdrop){ backdrop.hidden=false; requestAnimationFrame(()=>backdrop.classList.add('show')); }
+        lastFocus = document.activeElement;
+        links[0]?.focus();
+      }
+      function closeMenu(){
+        document.body.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded','false');
+        if(backdrop){ backdrop.classList.remove('show'); setTimeout(()=>backdrop.hidden=true,200); }
+        lastFocus?.focus?.();
+      }
+      function toggleMenu(){
+        document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
+      }
+
+      burger?.addEventListener('click', toggleMenu);
+      backdrop?.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', e => { if (e.key==='Escape') closeMenu(); });
+      links.forEach(a => a.addEventListener('click', () => { if (mq.matches) closeMenu(); }));
+
+      // Mark current page active
+      const current = location.pathname.split('/').pop(); // e.g., 'history.html'
+      links.forEach(a => { if (a.getAttribute('href')?.endsWith(current)) a.classList.add('active'); });
+    })();
+  </script>
+</body>
+</html>
